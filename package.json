@@ -1,0 +1,25 @@
+{
+  "name": "what-did-ventoy-do",
+  "version": "1.0.0",
+  "description": "Analyse Ventoy log to know what did ventoy do",
+  "main": "index.ts",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "ts-node test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/EdgelessPE/what-did-ventoy-do.git"
+  },
+  "keywords": [
+    "ventoy"
+  ],
+  "author": "Cno",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/EdgelessPE/what-did-ventoy-do/issues"
+  },
+  "homepage": "https://github.com/EdgelessPE/what-did-ventoy-do#readme"
+}
