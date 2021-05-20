@@ -45,8 +45,60 @@ function match(key:string):RegExpMatchArray|string{
         return r
     }
 }
-function matchVentoy(index:number):_VentoyInfo|void {
+function parseVentoyExisted(index:number):_VentoyInfo {
+    let regex_str="/PhyDrive "+index+" is Ventoy Disk[^\\n\\r]*/"
+    let regex:RegExp=eval(regex_str)
+    let result:Array<string>=log.match(regex)
+    if(result){
+        let line=result[0]
+        return {
+            installed:true,
+            version:line.match(/ver:\d+.\d+(.\d+)*/)[0].split(":")[1],
+            secureBoot:line.match(/SecureBoot:\d/)[0].split(":")[1]!="0"
+        }
+    }else{
+        return {
+            installed:false,
+            version:"0.0.0",
+            secureBoot:false
+        }
+    }
 
+}
+function parseVentoyInstalled():Array<_VentoyInfo>{
+    //查找安装语句
+    let installTargetLines:RegExpMatchArray=log.match(/InstallVentoy2PhyDrive[^\n\r]*/g)
+
+    //安装语句分段
+    let installBlocks:Array<string>=log.split("InstallVentoy2PhyDrive").splice(1)
+
+    if(installBlocks.length!==installTargetLines.length) throw "ParseVentoyInstalled_FAILED:installBlocks.length!==installTargetLines.length"
+
+    //收集安装目标信息
+    let found:Array<_VentoyInfo>=[]
+    for (let i=0;i<installTargetLines.length;i++) {
+        //获取当前行
+        let line:string=installTargetLines[i]
+        //匹配index
+        let index=line.match(/PhyDrive\d+/)[0].split("PhyDrive")[1]
+        //获取当前安装信息对应的块
+        let block:string=installBlocks[i]
+        //匹配安全启动
+        let secureBoot_match=block.match(/VentoyProcSecureBoot \d/)[0]
+        //匹配是否成功
+        let success_match=block.match(/]\s*OK[\n\r]/)
+        let success=false
+        if(success_match) success=true
+
+        //推入found数组
+        found.push({
+            installed:success,
+            secureBoot:secureBoot_match[secureBoot_match.length-1]!="0",
+            version:"Unknown"
+        })
+    }
+
+    return found
 }
 
 //parser
@@ -79,16 +131,6 @@ function parseDrivesInfo(lines:Array<string>):Array<_DriveInfo>{
             return null
         }
     }
-    let matchVentoyDetectedLineWithIndex=function (index:number):string|void {
-        let regex_str="/PhyDrive "+index+" is Ventoy Disk[^\\n\\r]*/"
-        let regex:RegExp=eval(regex_str)
-        let result:Array<string>=log.match(regex)
-        if(result){
-            return result[0]
-        }else{
-            return null
-        }
-    }
 
     //去重
     for(let i=0;i<lines.length;i++){
@@ -104,8 +146,9 @@ function parseDrivesInfo(lines:Array<string>):Array<_DriveInfo>{
         //获取Naive描述
         let n:NaiveDriveInfo=hash[index]
         //获取检测到Ventoy信息
-        let ventoyDetected_match=matchVentoyDetectedLineWithIndex(Number(index))
-        //
+        let ventoyExisted_match:_VentoyInfo=parseVentoyExisted(Number(index))
+        //获取安装的Ventoy信息
+        //let ventoyInstalled_match:_VentoyInfo=parseVentoyInstalled(Number(index))
         //匹配可移动设备的描述行
         let line=matchRemovableLineWithIndex(Number(index))
         if(line){
@@ -160,5 +203,4 @@ function main(input_log:string){
 
 
 log=require('fs').readFileSync("./examples/log.txt").toString()
-let lines=match("Drive_lines") as Array<string>
-console.log(parseDrivesInfo(lines))
+console.log(parseVentoyInstalled())
