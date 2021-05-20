@@ -62,14 +62,18 @@ function findVentoyExisted():any {
 
     return found
 }
-function findVentoyInstalled():any{
+function findVentoyInstalledOrUpdated(install:boolean):any{
+    //计算token
+    let token:string=install?"InstallVentoy2PhyDrive":"UpdateVentoy2PhyDrive"
     //查找安装语句
-    let installTargetLines:RegExpMatchArray=log.match(/InstallVentoy2PhyDrive[^\n\r]*/g)
+    let r_str="/"+token+"[^\\n\\r]*/g"
+    let installTargetLines:RegExpMatchArray=log.match(eval(r_str))
+    if(installTargetLines==null) return {}
 
     //安装语句分段
-    let installBlocks:Array<string>=log.split("InstallVentoy2PhyDrive").splice(1)
+    let installBlocks:Array<string>=log.split(token).splice(1)
 
-    if(installBlocks.length!==installTargetLines.length) throw "ParseVentoyInstalled_FAILED:installBlocks.length!==installTargetLines.length"
+    if(installBlocks.length!==installTargetLines.length) throw "ParseVentoyInstalled_FAILED-"+installBlocks.length+":"+installTargetLines.length
 
     //收集安装目标信息
     let found:any={}
@@ -81,7 +85,9 @@ function findVentoyInstalled():any{
         //获取当前安装信息对应的块
         let block:string=installBlocks[i]
         //匹配安全启动
-        let secureBoot_match=block.match(/VentoyProcSecureBoot \d/)[0]
+        let secureBoot_match:any=block.match(/VentoyProcSecureBoot \d/)
+        if(secureBoot_match) secureBoot_match=secureBoot_match[0]
+        else secureBoot_match="0"
         //匹配是否成功
         let success_match=block.match(/]\s*OK[\n\r]/)
         let success=false
@@ -136,33 +142,46 @@ function parseDrivesInfo(lines:Array<string>):Array<_DriveInfo>{
             hash[result.index]=result
         }
     }
+    //获取Ventoy安装状态
+    let ventoyExisted:any=findVentoyExisted()
+    let ventoyInstalled:any=findVentoyInstalledOrUpdated(true)
+    let ventoyUpdated:any=findVentoyInstalledOrUpdated(false)
 
-    //hash转换为数组，获得Array<NaiveDriveInfo>
+    //综合信息
     let result:Array<_DriveInfo>=[]
     for (let index in hash) {
         //获取Naive描述
         let n:NaiveDriveInfo=hash[index]
-        //获取检测到Ventoy信息
-        //let ventoyExisted_match:_VentoyInfo=parseVentoyExisted(Number(index))
-        //获取安装的Ventoy信息
-        //let ventoyInstalled_match:_VentoyInfo=parseVentoyInstalled(Number(index))
+        //获取Ventoy信息
+        let ventoyInfo:_VentoyInfo={
+            installed:false,
+            version:"0.0.0",
+            secureBoot:false
+        }
+        if(ventoyExisted.hasOwnProperty(index)){
+            ventoyInfo=ventoyExisted[index]
+        }
+        if(ventoyInstalled.hasOwnProperty(index)){
+            ventoyInfo=ventoyInstalled[index]
+        }
+        if(ventoyUpdated.hasOwnProperty(index)){
+            ventoyInfo=ventoyUpdated[index]
+        }
         //匹配可移动设备的描述行
-        let line=matchRemovableLineWithIndex(Number(index))
-        if(line){
+        let rline=matchRemovableLineWithIndex(Number(index))
+
+        //填充信息
+        if(rline){
             //设备是可移动设备，匹配详细描述
-            let name_match:string=line.match(/Name:[^\n]+/)[0]
-            let removable_match:string=line.match(/Removable:[^\n]+/)[0]
+            let name_match:string=rline.match(/Name:[^\n]+/)[0]
+            let removable_match:string=rline.match(/Removable:[^\n]+/)[0]
             result.push({
                 index:Number(index),
                 letter:n.letter,
                 capacity:n.capacity,
                 removable:removable_match[removable_match.length - 1] != "0",
                 flag:name_match.split(":")[1],
-                ventoyStatus:{
-                    installed:false,
-                    version:"0.0.0",
-                    secureBoot:false
-                }
+                ventoyStatus:ventoyInfo
             })
         }else{
             //设备为本地磁盘，填充缺省值
@@ -172,11 +191,7 @@ function parseDrivesInfo(lines:Array<string>):Array<_DriveInfo>{
                 capacity:n.capacity,
                 removable:false,
                 flag:"LogicalDrive",
-                ventoyStatus:{
-                    installed:false,
-                    version:"0.0.0",
-                    secureBoot:false
-                }
+                ventoyStatus:ventoyInfo
             })
         }
     }
@@ -199,5 +214,6 @@ function main(input_log:string){
 }
 
 
-log=require('fs').readFileSync("./examples/log_install.txt").toString()
-console.log(findVentoyExisted())
+log=require('fs').readFileSync("./examples/log_update_fail.txt").toString()
+let lines=match("Drive_lines") as Array<string>
+console.log(parseDrivesInfo(lines))
