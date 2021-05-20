@@ -45,27 +45,24 @@ function match(key:string):RegExpMatchArray|string{
         return r
     }
 }
-function parseVentoyExisted(index:number):_VentoyInfo {
-    let regex_str="/PhyDrive "+index+" is Ventoy Disk[^\\n\\r]*/"
-    let regex:RegExp=eval(regex_str)
-    let result:Array<string>=log.match(regex)
-    if(result){
-        let line=result[0]
-        return {
+function findVentoyExisted():any {
+    //查找存在语句
+    let exist_lines=log.match(/PhyDrive \d+ is Ventoy Disk[^\n\r]*/g)
+    //分析语句
+    let found:any={}
+    for(let i=0;i<exist_lines.length;i++){
+        let line:string=exist_lines[i]
+        let index:string=line.match(/PhyDrive \d+/)[0].split(" ")[1]
+        found[index]={
             installed:true,
             version:line.match(/ver:\d+.\d+(.\d+)*/)[0].split(":")[1],
             secureBoot:line.match(/SecureBoot:\d/)[0].split(":")[1]!="0"
         }
-    }else{
-        return {
-            installed:false,
-            version:"0.0.0",
-            secureBoot:false
-        }
     }
 
+    return found
 }
-function parseVentoyInstalled():Array<_VentoyInfo>{
+function findVentoyInstalled():any{
     //查找安装语句
     let installTargetLines:RegExpMatchArray=log.match(/InstallVentoy2PhyDrive[^\n\r]*/g)
 
@@ -75,7 +72,7 @@ function parseVentoyInstalled():Array<_VentoyInfo>{
     if(installBlocks.length!==installTargetLines.length) throw "ParseVentoyInstalled_FAILED:installBlocks.length!==installTargetLines.length"
 
     //收集安装目标信息
-    let found:Array<_VentoyInfo>=[]
+    let found:any={}
     for (let i=0;i<installTargetLines.length;i++) {
         //获取当前行
         let line:string=installTargetLines[i]
@@ -90,12 +87,12 @@ function parseVentoyInstalled():Array<_VentoyInfo>{
         let success=false
         if(success_match) success=true
 
-        //推入found数组
-        found.push({
+        //推入found
+        found[index]={
             installed:success,
             secureBoot:secureBoot_match[secureBoot_match.length-1]!="0",
             version:"Unknown"
-        })
+        }
     }
 
     return found
@@ -146,7 +143,7 @@ function parseDrivesInfo(lines:Array<string>):Array<_DriveInfo>{
         //获取Naive描述
         let n:NaiveDriveInfo=hash[index]
         //获取检测到Ventoy信息
-        let ventoyExisted_match:_VentoyInfo=parseVentoyExisted(Number(index))
+        //let ventoyExisted_match:_VentoyInfo=parseVentoyExisted(Number(index))
         //获取安装的Ventoy信息
         //let ventoyInstalled_match:_VentoyInfo=parseVentoyInstalled(Number(index))
         //匹配可移动设备的描述行
@@ -202,5 +199,5 @@ function main(input_log:string){
 }
 
 
-log=require('fs').readFileSync("./examples/log.txt").toString()
-console.log(parseVentoyInstalled())
+log=require('fs').readFileSync("./examples/log_install.txt").toString()
+console.log(findVentoyExisted())
