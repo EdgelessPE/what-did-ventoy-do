@@ -84,4 +84,4 @@ try{
 ```
 
 ## Used by
-[Edgeless/Edgeless Hub](https://github.com/EdgelessPE/edgeless-hub)
+[EdgelessPE/edgeless-hub](https://github.com/EdgelessPE/edgeless-hub)
