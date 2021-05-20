@@ -9,6 +9,7 @@ class _DriveInfo{
 
 class _VentoyInfo{
     installed:boolean
+    updated:boolean
     version:string
     secureBoot:boolean
 }
@@ -21,7 +22,7 @@ class _VentoyInstallationStatus{
     success:boolean
     upgrade:boolean
     secureBoot:boolean
-    targetDrive:_DriveInfo
+    targetDrive:number
 }
 
 class _SystemInfo{

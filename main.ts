@@ -12,10 +12,10 @@ class NaiveDriveInfo{
 }
 
 let log:string=""
+let operation_log:Array<_VentoyInstallationStatus>=[]
 
 
-
-//match utils
+//match util
 const regexTable:any={
     Ventoy2Disk_Version:{
         exp:/Ventoy2Disk \d(.+)/,
@@ -45,6 +45,8 @@ function match(key:string):RegExpMatchArray|string{
         return r
     }
 }
+
+//finder
 function findVentoyExisted():any {
     //查找存在语句
     let exist_lines=log.match(/PhyDrive \d+ is Ventoy Disk[^\n\r]*/g)
@@ -55,6 +57,7 @@ function findVentoyExisted():any {
         let index:string=line.match(/PhyDrive \d+/)[0].split(" ")[1]
         found[index]={
             installed:true,
+            updated:false,
             version:line.match(/ver:\d+.\d+(.\d+)*/)[0].split(":")[1],
             secureBoot:line.match(/SecureBoot:\d/)[0].split(":")[1]!="0"
         }
@@ -88,6 +91,7 @@ function findVentoyInstalledOrUpdated(install:boolean):any{
         let secureBoot_match:any=block.match(/VentoyProcSecureBoot \d/)
         if(secureBoot_match) secureBoot_match=secureBoot_match[0]
         else secureBoot_match="0"
+        let secureBoot:boolean=secureBoot_match[secureBoot_match.length-1]!="0"
         //匹配是否成功
         let success_match=block.match(/]\s*OK[\n\r]/)
         let success=false
@@ -95,10 +99,19 @@ function findVentoyInstalledOrUpdated(install:boolean):any{
 
         //推入found
         found[index]={
-            installed:success,
-            secureBoot:secureBoot_match[secureBoot_match.length-1]!="0",
+            installed:install&&success,
+            updated:!install&&success,
+            secureBoot,
             version:"Unknown"
         }
+
+        //记录到ventoy操作日志
+        operation_log.push({
+            success,
+            upgrade:!install,
+            secureBoot,
+            targetDrive:Number(index)
+        })
     }
 
     return found
@@ -155,6 +168,7 @@ function parseDrivesInfo(lines:Array<string>):Array<_DriveInfo>{
         //获取Ventoy信息
         let ventoyInfo:_VentoyInfo={
             installed:false,
+            updated:false,
             version:"0.0.0",
             secureBoot:false
         }
@@ -214,6 +228,7 @@ function main(input_log:string){
 }
 
 
-log=require('fs').readFileSync("./examples/log_update_fail.txt").toString()
+log=require('fs').readFileSync("./examples/log_nothing.txt").toString()
 let lines=match("Drive_lines") as Array<string>
 console.log(parseDrivesInfo(lines))
+console.log(operation_log)
