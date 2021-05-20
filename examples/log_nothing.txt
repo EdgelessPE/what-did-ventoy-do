@@ -1,0 +1,293 @@
+[2021/05/20 23:48:52.329] 
+################################ Ventoy2Disk 1.0.0.2 ################################
+[2021/05/20 23:48:52.330] Control Flag: 0 1 1
+[2021/05/20 23:48:52.330] Windows Version : Windows 10 64-bit (Build 19042)
+[2021/05/20 23:48:52.330] 
+===================== Enum All PhyDrives =====================
+[2021/05/20 23:48:52.331] RegOpenKeyExA <SYSTEM\CurrentControlSet\Services\disk\Enum> Ret:0
+[2021/05/20 23:48:52.331] RegQueryValueExA <Count> ret:0  Size:4 Value:3
+[2021/05/20 23:48:52.331] GetPhysicalDriveCount: 3
+[2021/05/20 23:48:52.331] Logical Drives: 0x3c
+[2021/05/20 23:48:52.331] LogicalDrive:\\.\C: PhyDrive:1 Offset:122683392 ExtentLength:1023499047424
+[2021/05/20 23:48:52.331] C --> 1
+[2021/05/20 23:48:52.331] LogicalDrive:\\.\D: PhyDrive:0 Offset:122683392 ExtentLength:119323532800
+[2021/05/20 23:48:52.332] D --> 0
+[2021/05/20 23:48:52.332] LogicalDrive:\\.\E: PhyDrive:2 Offset:1048576 ExtentLength:30717394944
+[2021/05/20 23:48:52.332] E --> 2
+[2021/05/20 23:48:52.332] LogicalDrive:\\.\F: PhyDrive:2 Offset:30718443520 ExtentLength:33554432
+[2021/05/20 23:48:52.333] F --> 2
+[2021/05/20 23:48:52.333] Create file Handle:00000170 \\.\PhysicalDrive0 status:0
+[2021/05/20 23:48:52.333] PHYSICALDRIVE0 size 120034123776 bytes
+[2021/05/20 23:48:52.334] Create file Handle:00000170 \\.\PhysicalDrive1 status:0
+[2021/05/20 23:48:52.334] PHYSICALDRIVE1 size 1024209543168 bytes
+[2021/05/20 23:48:52.334] Create file Handle:00000170 \\.\PhysicalDrive2 status:0
+[2021/05/20 23:48:52.335] PHYSICALDRIVE2 size 30752000000 bytes
+[2021/05/20 23:48:52.335] PhyDrv:0 BusType:SATA Removable:0 Size:120GB(120034123776) Name: GALAX TA1D0120A
+[2021/05/20 23:48:52.335] PhyDrv:1 BusType:Nvme Removable:0 Size:1024GB(1024209543168) Name: KXG60ZNV1T02 TOSHIBA
+[2021/05/20 23:48:52.335] PhyDrv:2 BusType:USB  Removable:1 Size:32GB(30752000000) Name:SanDisk Ultra Fit
+[2021/05/20 23:48:52.335] LogicalDrive:\\.\C: PhyDrive:1 Offset:122683392 ExtentLength:1023499047424
+[2021/05/20 23:48:52.335] Logical Drive:C  ===> PhyDrive:1
+[2021/05/20 23:48:52.335] LogicalDrive:\\.\D: PhyDrive:0 Offset:122683392 ExtentLength:119323532800
+[2021/05/20 23:48:52.336] Logical Drive:D  ===> PhyDrive:0
+[2021/05/20 23:48:52.336] LogicalDrive:\\.\E: PhyDrive:2 Offset:1048576 ExtentLength:30717394944
+[2021/05/20 23:48:52.336] Logical Drive:E  ===> PhyDrive:2
+[2021/05/20 23:48:52.336] LogicalDrive:\\.\F: PhyDrive:2 Offset:30718443520 ExtentLength:33554432
+[2021/05/20 23:48:52.336] Logical Drive:F  ===> PhyDrive:2
+[2021/05/20 23:48:52.337] Create file Handle:00000170 \\.\PhysicalDrive2 status:0
+[2021/05/20 23:48:52.338] Read MBR Ret:1 Size:512 code:183
+[2021/05/20 23:48:52.339] =========== Partition Table 1 ============
+[2021/05/20 23:48:52.339] PartTbl.Active = 0x80
+[2021/05/20 23:48:52.339] PartTbl.FsFlag = 0x7
+[2021/05/20 23:48:52.339] PartTbl.StartSectorId = 2048
+[2021/05/20 23:48:52.339] PartTbl.SectorCount = 59994912
+[2021/05/20 23:48:52.339] PartTbl.StartHead = 32
+[2021/05/20 23:48:52.339] PartTbl.StartSector = 33
+[2021/05/20 23:48:52.339] PartTbl.StartCylinder = 0
+[2021/05/20 23:48:52.340] PartTbl.EndHead = 162
+[2021/05/20 23:48:52.340] PartTbl.EndSector = 44
+[2021/05/20 23:48:52.340] PartTbl.EndCylinder = 662
+[2021/05/20 23:48:52.340] =========== Partition Table 2 ============
+[2021/05/20 23:48:52.340] PartTbl.Active = 0x0
+[2021/05/20 23:48:52.340] PartTbl.FsFlag = 0xef
+[2021/05/20 23:48:52.340] PartTbl.StartSectorId = 59996960
+[2021/05/20 23:48:52.340] PartTbl.SectorCount = 65536
+[2021/05/20 23:48:52.340] PartTbl.StartHead = 162
+[2021/05/20 23:48:52.341] PartTbl.StartSector = 45
+[2021/05/20 23:48:52.341] PartTbl.StartCylinder = 662
+[2021/05/20 23:48:52.341] PartTbl.EndHead = 182
+[2021/05/20 23:48:52.341] PartTbl.EndSector = 60
+[2021/05/20 23:48:52.341] PartTbl.EndCylinder = 666
+[2021/05/20 23:48:52.341] =========== Partition Table 3 ============
+[2021/05/20 23:48:52.341] PartTbl.Active = 0x0
+[2021/05/20 23:48:52.341] PartTbl.FsFlag = 0x0
+[2021/05/20 23:48:52.342] PartTbl.StartSectorId = 0
+[2021/05/20 23:48:52.342] PartTbl.SectorCount = 0
+[2021/05/20 23:48:52.342] PartTbl.StartHead = 0
+[2021/05/20 23:48:52.342] PartTbl.StartSector = 0
+[2021/05/20 23:48:52.342] PartTbl.StartCylinder = 0
+[2021/05/20 23:48:52.342] PartTbl.EndHead = 0
+[2021/05/20 23:48:52.342] PartTbl.EndSector = 0
+[2021/05/20 23:48:52.342] PartTbl.EndCylinder = 0
+[2021/05/20 23:48:52.343] =========== Partition Table 4 ============
+[2021/05/20 23:48:52.343] PartTbl.Active = 0x0
+[2021/05/20 23:48:52.343] PartTbl.FsFlag = 0x0
+[2021/05/20 23:48:52.343] PartTbl.StartSectorId = 0
+[2021/05/20 23:48:52.343] PartTbl.SectorCount = 0
+[2021/05/20 23:48:52.343] PartTbl.StartHead = 0
+[2021/05/20 23:48:52.343] PartTbl.StartSector = 0
+[2021/05/20 23:48:52.343] PartTbl.StartCylinder = 0
+[2021/05/20 23:48:52.343] PartTbl.EndHead = 0
+[2021/05/20 23:48:52.344] PartTbl.EndSector = 0
+[2021/05/20 23:48:52.344] PartTbl.EndCylinder = 0
+[2021/05/20 23:48:52.344] PhysicalDrive2 is ventoy disk
+[2021/05/20 23:48:52.344] QueryDosDeviceA success \Device\Harddisk2\DR2
+[2021/05/20 23:48:52.345] [0] CreateFileA \\.\PhysicalDrive2 code:0 00000170
+[2021/05/20 23:48:52.345] Parse FAT fs...
+[2021/05/20 23:48:52.346] attach media success...
+[2021/05/20 23:48:52.356] GetVentoyVerInPhyDrive rc=0...
+[2021/05/20 23:48:52.356] VentoyVerInPhyDrive 2 is <1.0.36>...
+[2021/05/20 23:48:52.361] PhyDrive 2 is Ventoy Disk ver:1.0.36 SecureBoot:0
+[2021/05/20 23:48:52.361] < GALAX TA1D0120A> is filtered for not USB type.
+[2021/05/20 23:48:52.361] < KXG60ZNV1T02 TOSHIBA> is filtered for not USB type.
+[2021/05/20 23:48:52.387] Load languages from json file ...
+[2021/05/20 23:48:52.387] language json file len:124378 json parse:0
+[2021/05/20 23:48:52.388] Total 37 languages ...
+[2021/05/20 23:48:52.463] Combox select change, update secure boot option: 0 0
+[2021/05/20 23:48:56.177] UpdateVentoy2PhyDrive MBR PhyDrive2 <<SanDisk Ultra Fit 32GB>>
+[2021/05/20 23:48:56.179] Lock disk for umount ............................ 
+[2021/05/20 23:48:56.179] QueryDosDeviceA success \Device\Harddisk2\DR2
+[2021/05/20 23:48:56.180] [0] CreateFileA \\.\PhysicalDrive2 code:0 00000578
+[2021/05/20 23:48:56.180] FSCTL_LOCK_VOLUME success
+[2021/05/20 23:48:56.181] MBR StartSector in PartTbl:59996960
+[2021/05/20 23:48:56.181] MBR Reserved Disk Space:0 MB
+[2021/05/20 23:48:56.182] LogicalDrive:\\.\C: PhyDrive:1 Offset:122683392 ExtentLength:1023499047424
+[2021/05/20 23:48:56.182] LogicalDrive:\\.\D: PhyDrive:0 Offset:122683392 ExtentLength:119323532800
+[2021/05/20 23:48:56.182] LogicalDrive:\\.\E: PhyDrive:2 Offset:1048576 ExtentLength:30717394944
+[2021/05/20 23:48:56.182] E: is belong to phydrive2
+[2021/05/20 23:48:56.183] LogicalDrive:\\.\F: PhyDrive:2 Offset:30718443520 ExtentLength:33554432
+[2021/05/20 23:48:56.183] F: is belong to phydrive2
+[2021/05/20 23:48:56.185] F:\ is ventoy logical drive
+[2021/05/20 23:48:56.187] Delete mountpoint F:\ ret:1 code:0
+[2021/05/20 23:48:56.190] Lock disk for update ............................ 
+[2021/05/20 23:48:56.190] QueryDosDeviceA success \Device\Harddisk2\DR2
+[2021/05/20 23:48:56.190] [0] CreateFileA \\.\PhysicalDrive2 code:32 FFFFFFFF
+[2021/05/20 23:48:56.191] Waiting for access on \\.\PhysicalDrive2 [\Device\Harddisk2\DR2]...
+[2021/05/20 23:48:56.295] [1] CreateFileA \\.\PhysicalDrive2 code:0 0000057C
+[2021/05/20 23:48:56.295] Opened \\.\PhysicalDrive2 for exclusive write access
+[2021/05/20 23:48:56.295] FSCTL_LOCK_VOLUME success
+[2021/05/20 23:48:56.296] Lock volume for update .......................... 
+[2021/05/20 23:48:56.296] GetVentoyVolumeName PhyDrive 2 SectorStart:59996960 PartOffset:30718443520
+[2021/05/20 23:48:56.296] Find volume:\\?\Volume{08b08dce-2cf9-4555-9fd3-d51e3ac4ef30}\
+[2021/05/20 23:48:56.297] IOCTL_VOLUME_GET_VOLUME_DISK_EXTENTS bRet:1 code:0
+[2021/05/20 23:48:56.297] NumberOfDiskExtents:1 DiskNumber:0
+[2021/05/20 23:48:56.297] This volume DiskNumber:0 offset:122683392
+[2021/05/20 23:48:56.297] Find volume:\\?\Volume{53fcfbbc-e758-496b-a2ac-65feccee19b5}\
+[2021/05/20 23:48:56.297] IOCTL_VOLUME_GET_VOLUME_DISK_EXTENTS bRet:1 code:0
+[2021/05/20 23:48:56.297] NumberOfDiskExtents:1 DiskNumber:0
+[2021/05/20 23:48:56.298] This volume DiskNumber:0 offset:119446437888
+[2021/05/20 23:48:56.298] Find volume:\\?\Volume{bee9d893-fa89-421f-9913-2462eb87dc8c}\
+[2021/05/20 23:48:56.298] IOCTL_VOLUME_GET_VOLUME_DISK_EXTENTS bRet:1 code:0
+[2021/05/20 23:48:56.298] NumberOfDiskExtents:1 DiskNumber:1
+[2021/05/20 23:48:56.298] This volume DiskNumber:1 offset:122683392
+[2021/05/20 23:48:56.298] Find volume:\\?\Volume{d30909c0-1c40-4403-85f5-da10db4bfbb3}\
+[2021/05/20 23:48:56.298] IOCTL_VOLUME_GET_VOLUME_DISK_EXTENTS bRet:1 code:0
+[2021/05/20 23:48:56.299] NumberOfDiskExtents:1 DiskNumber:1
+[2021/05/20 23:48:56.299] This volume DiskNumber:1 offset:1023621988352
+[2021/05/20 23:48:56.299] Find volume:\\?\Volume{9af8237c-1dca-11eb-be9e-001a7dda7111}\
+[2021/05/20 23:48:56.299] IOCTL_VOLUME_GET_VOLUME_DISK_EXTENTS bRet:1 code:0
+[2021/05/20 23:48:56.299] NumberOfDiskExtents:1 DiskNumber:2
+[2021/05/20 23:48:56.299] This volume DiskNumber:2 offset:1048576
+[2021/05/20 23:48:56.299] Find volume:\\?\Volume{b43418a2-8d17-11eb-bed7-001a7dda7111}\
+[2021/05/20 23:48:56.300] IOCTL_VOLUME_GET_VOLUME_DISK_EXTENTS bRet:1 code:0
+[2021/05/20 23:48:56.300] NumberOfDiskExtents:1 DiskNumber:2
+[2021/05/20 23:48:56.300] This volume DiskNumber:2 offset:30718443520
+[2021/05/20 23:48:56.300] This volume match
+[2021/05/20 23:48:56.300] GetVentoyVolumeName return 0
+[2021/05/20 23:48:56.300] Now lock and dismount volume <\\?\Volume{b43418a2-8d17-11eb-bed7-001a7dda7111}>
+[2021/05/20 23:48:56.300] Failed to create file volume, errcode:32
+[2021/05/20 23:48:56.300] FindProcessOccupyDisk for PhyDrive 2
+[2021/05/20 23:48:56.301] QueryDosDeviceA success \Device\Harddisk2\DR2
+[2021/05/20 23:48:56.363] NOTE: Could not identify the process(es) or service(s) accessing \Device\Harddisk2\DR2
+[2021/05/20 23:48:56.364] This time update failed, now wait and retry...
+[2021/05/20 23:49:06.368] Now retry to update...
+[2021/05/20 23:49:06.368] UpdateVentoy2PhyDrive MBR PhyDrive2 <<SanDisk Ultra Fit 32GB>>
+[2021/05/20 23:49:06.371] Lock disk for umount ............................ 
+[2021/05/20 23:49:06.372] QueryDosDeviceA success \Device\Harddisk2\DR2
+[2021/05/20 23:49:06.372] [0] CreateFileA \\.\PhysicalDrive2 code:0 0000057C
+[2021/05/20 23:49:06.373] FSCTL_LOCK_VOLUME success
+[2021/05/20 23:49:06.374] MBR StartSector in PartTbl:59996960
+[2021/05/20 23:49:06.374] MBR Reserved Disk Space:0 MB
+[2021/05/20 23:49:06.375] LogicalDrive:\\.\C: PhyDrive:1 Offset:122683392 ExtentLength:1023499047424
+[2021/05/20 23:49:06.375] LogicalDrive:\\.\D: PhyDrive:0 Offset:122683392 ExtentLength:119323532800
+[2021/05/20 23:49:06.375] LogicalDrive:\\.\E: PhyDrive:2 Offset:1048576 ExtentLength:30717394944
+[2021/05/20 23:49:06.375] E: is belong to phydrive2
+[2021/05/20 23:49:06.377] Lock disk for update ............................ 
+[2021/05/20 23:49:06.377] QueryDosDeviceA success \Device\Harddisk2\DR2
+[2021/05/20 23:49:06.377] [0] CreateFileA \\.\PhysicalDrive2 code:0 00000584
+[2021/05/20 23:49:06.377] Opened \\.\PhysicalDrive2 for exclusive write access
+[2021/05/20 23:49:06.378] FSCTL_LOCK_VOLUME success
+[2021/05/20 23:49:06.378] Lock volume for update .......................... 
+[2021/05/20 23:49:06.379] GetVentoyVolumeName PhyDrive 2 SectorStart:59996960 PartOffset:30718443520
+[2021/05/20 23:49:06.379] Find volume:\\?\Volume{08b08dce-2cf9-4555-9fd3-d51e3ac4ef30}\
+[2021/05/20 23:49:06.379] IOCTL_VOLUME_GET_VOLUME_DISK_EXTENTS bRet:1 code:0
+[2021/05/20 23:49:06.379] NumberOfDiskExtents:1 DiskNumber:0
+[2021/05/20 23:49:06.379] This volume DiskNumber:0 offset:122683392
+[2021/05/20 23:49:06.379] Find volume:\\?\Volume{53fcfbbc-e758-496b-a2ac-65feccee19b5}\
+[2021/05/20 23:49:06.379] IOCTL_VOLUME_GET_VOLUME_DISK_EXTENTS bRet:1 code:0
+[2021/05/20 23:49:06.379] NumberOfDiskExtents:1 DiskNumber:0
+[2021/05/20 23:49:06.380] This volume DiskNumber:0 offset:119446437888
+[2021/05/20 23:49:06.380] Find volume:\\?\Volume{bee9d893-fa89-421f-9913-2462eb87dc8c}\
+[2021/05/20 23:49:06.380] IOCTL_VOLUME_GET_VOLUME_DISK_EXTENTS bRet:1 code:0
+[2021/05/20 23:49:06.380] NumberOfDiskExtents:1 DiskNumber:1
+[2021/05/20 23:49:06.380] This volume DiskNumber:1 offset:122683392
+[2021/05/20 23:49:06.380] Find volume:\\?\Volume{d30909c0-1c40-4403-85f5-da10db4bfbb3}\
+[2021/05/20 23:49:06.380] IOCTL_VOLUME_GET_VOLUME_DISK_EXTENTS bRet:1 code:0
+[2021/05/20 23:49:06.381] NumberOfDiskExtents:1 DiskNumber:1
+[2021/05/20 23:49:06.381] This volume DiskNumber:1 offset:1023621988352
+[2021/05/20 23:49:06.381] Find volume:\\?\Volume{9af8237c-1dca-11eb-be9e-001a7dda7111}\
+[2021/05/20 23:49:06.381] IOCTL_VOLUME_GET_VOLUME_DISK_EXTENTS bRet:1 code:0
+[2021/05/20 23:49:06.381] NumberOfDiskExtents:1 DiskNumber:2
+[2021/05/20 23:49:06.381] This volume DiskNumber:2 offset:1048576
+[2021/05/20 23:49:06.381] Find volume:\\?\Volume{b43418a2-8d17-11eb-bed7-001a7dda7111}\
+[2021/05/20 23:49:06.382] IOCTL_VOLUME_GET_VOLUME_DISK_EXTENTS bRet:1 code:0
+[2021/05/20 23:49:06.382] NumberOfDiskExtents:1 DiskNumber:2
+[2021/05/20 23:49:06.382] This volume DiskNumber:2 offset:30718443520
+[2021/05/20 23:49:06.382] This volume match
+[2021/05/20 23:49:06.382] GetVentoyVolumeName return 0
+[2021/05/20 23:49:06.382] Now lock and dismount volume <\\?\Volume{b43418a2-8d17-11eb-bed7-001a7dda7111}>
+[2021/05/20 23:49:06.382] Failed to create file volume, errcode:32
+[2021/05/20 23:49:06.382] FindProcessOccupyDisk for PhyDrive 2
+[2021/05/20 23:49:06.382] QueryDosDeviceA success \Device\Harddisk2\DR2
+[2021/05/20 23:49:06.437] NOTE: Could not identify the process(es) or service(s) accessing \Device\Harddisk2\DR2
+[2021/05/20 23:49:10.267] Combox select change, update secure boot option: 0 0
+[2021/05/20 23:50:07.366] 
+################################ Ventoy2Disk 1.0.0.2 ################################
+[2021/05/20 23:50:07.366] Control Flag: 0 1 1
+[2021/05/20 23:50:07.366] Windows Version : Windows 10 64-bit (Build 19042)
+[2021/05/20 23:50:07.366] 
+===================== Enum All PhyDrives =====================
+[2021/05/20 23:50:07.367] RegOpenKeyExA <SYSTEM\CurrentControlSet\Services\disk\Enum> Ret:0
+[2021/05/20 23:50:07.367] RegQueryValueExA <Count> ret:0  Size:4 Value:3
+[2021/05/20 23:50:07.367] GetPhysicalDriveCount: 3
+[2021/05/20 23:50:07.367] Logical Drives: 0x1c
+[2021/05/20 23:50:07.367] LogicalDrive:\\.\C: PhyDrive:1 Offset:122683392 ExtentLength:1023499047424
+[2021/05/20 23:50:07.367] C --> 1
+[2021/05/20 23:50:07.368] LogicalDrive:\\.\D: PhyDrive:0 Offset:122683392 ExtentLength:119323532800
+[2021/05/20 23:50:07.368] D --> 0
+[2021/05/20 23:50:07.368] LogicalDrive:\\.\E: PhyDrive:2 Offset:1048576 ExtentLength:30717394944
+[2021/05/20 23:50:07.368] E --> 2
+[2021/05/20 23:50:07.369] Create file Handle:00000100 \\.\PhysicalDrive0 status:0
+[2021/05/20 23:50:07.369] PHYSICALDRIVE0 size 120034123776 bytes
+[2021/05/20 23:50:07.369] Create file Handle:00000100 \\.\PhysicalDrive1 status:0
+[2021/05/20 23:50:07.369] PHYSICALDRIVE1 size 1024209543168 bytes
+[2021/05/20 23:50:07.370] Create file Handle:00000100 \\.\PhysicalDrive2 status:0
+[2021/05/20 23:50:07.370] PHYSICALDRIVE2 size 30752000000 bytes
+[2021/05/20 23:50:07.370] PhyDrv:0 BusType:SATA Removable:0 Size:120GB(120034123776) Name: GALAX TA1D0120A
+[2021/05/20 23:50:07.370] PhyDrv:1 BusType:Nvme Removable:0 Size:1024GB(1024209543168) Name: KXG60ZNV1T02 TOSHIBA
+[2021/05/20 23:50:07.371] PhyDrv:2 BusType:USB  Removable:1 Size:32GB(30752000000) Name:SanDisk Ultra Fit
+[2021/05/20 23:50:07.371] LogicalDrive:\\.\C: PhyDrive:1 Offset:122683392 ExtentLength:1023499047424
+[2021/05/20 23:50:07.371] Logical Drive:C  ===> PhyDrive:1
+[2021/05/20 23:50:07.371] LogicalDrive:\\.\D: PhyDrive:0 Offset:122683392 ExtentLength:119323532800
+[2021/05/20 23:50:07.371] Logical Drive:D  ===> PhyDrive:0
+[2021/05/20 23:50:07.371] LogicalDrive:\\.\E: PhyDrive:2 Offset:1048576 ExtentLength:30717394944
+[2021/05/20 23:50:07.372] Logical Drive:E  ===> PhyDrive:2
+[2021/05/20 23:50:07.372] Create file Handle:00000100 \\.\PhysicalDrive2 status:0
+[2021/05/20 23:50:07.373] Read MBR Ret:1 Size:512 code:183
+[2021/05/20 23:50:07.373] =========== Partition Table 1 ============
+[2021/05/20 23:50:07.373] PartTbl.Active = 0x80
+[2021/05/20 23:50:07.373] PartTbl.FsFlag = 0x7
+[2021/05/20 23:50:07.373] PartTbl.StartSectorId = 2048
+[2021/05/20 23:50:07.373] PartTbl.SectorCount = 59994912
+[2021/05/20 23:50:07.373] PartTbl.StartHead = 32
+[2021/05/20 23:50:07.373] PartTbl.StartSector = 33
+[2021/05/20 23:50:07.373] PartTbl.StartCylinder = 0
+[2021/05/20 23:50:07.374] PartTbl.EndHead = 162
+[2021/05/20 23:50:07.374] PartTbl.EndSector = 44
+[2021/05/20 23:50:07.374] PartTbl.EndCylinder = 662
+[2021/05/20 23:50:07.374] =========== Partition Table 2 ============
+[2021/05/20 23:50:07.374] PartTbl.Active = 0x0
+[2021/05/20 23:50:07.374] PartTbl.FsFlag = 0xef
+[2021/05/20 23:50:07.374] PartTbl.StartSectorId = 59996960
+[2021/05/20 23:50:07.374] PartTbl.SectorCount = 65536
+[2021/05/20 23:50:07.374] PartTbl.StartHead = 162
+[2021/05/20 23:50:07.375] PartTbl.StartSector = 45
+[2021/05/20 23:50:07.375] PartTbl.StartCylinder = 662
+[2021/05/20 23:50:07.375] PartTbl.EndHead = 182
+[2021/05/20 23:50:07.375] PartTbl.EndSector = 60
+[2021/05/20 23:50:07.375] PartTbl.EndCylinder = 666
+[2021/05/20 23:50:07.375] =========== Partition Table 3 ============
+[2021/05/20 23:50:07.375] PartTbl.Active = 0x0
+[2021/05/20 23:50:07.375] PartTbl.FsFlag = 0x0
+[2021/05/20 23:50:07.375] PartTbl.StartSectorId = 0
+[2021/05/20 23:50:07.376] PartTbl.SectorCount = 0
+[2021/05/20 23:50:07.376] PartTbl.StartHead = 0
+[2021/05/20 23:50:07.376] PartTbl.StartSector = 0
+[2021/05/20 23:50:07.376] PartTbl.StartCylinder = 0
+[2021/05/20 23:50:07.376] PartTbl.EndHead = 0
+[2021/05/20 23:50:07.376] PartTbl.EndSector = 0
+[2021/05/20 23:50:07.376] PartTbl.EndCylinder = 0
+[2021/05/20 23:50:07.376] =========== Partition Table 4 ============
+[2021/05/20 23:50:07.376] PartTbl.Active = 0x0
+[2021/05/20 23:50:07.377] PartTbl.FsFlag = 0x0
+[2021/05/20 23:50:07.377] PartTbl.StartSectorId = 0
+[2021/05/20 23:50:07.377] PartTbl.SectorCount = 0
+[2021/05/20 23:50:07.377] PartTbl.StartHead = 0
+[2021/05/20 23:50:07.377] PartTbl.StartSector = 0
+[2021/05/20 23:50:07.377] PartTbl.StartCylinder = 0
+[2021/05/20 23:50:07.377] PartTbl.EndHead = 0
+[2021/05/20 23:50:07.377] PartTbl.EndSector = 0
+[2021/05/20 23:50:07.377] PartTbl.EndCylinder = 0
+[2021/05/20 23:50:07.378] PhysicalDrive2 is ventoy disk
+[2021/05/20 23:50:07.378] QueryDosDeviceA success \Device\Harddisk2\DR3
+[2021/05/20 23:50:07.378] [0] CreateFileA \\.\PhysicalDrive2 code:0 00000100
+[2021/05/20 23:50:07.378] Parse FAT fs...
+[2021/05/20 23:50:07.381] attach media success...
+[2021/05/20 23:50:07.391] GetVentoyVerInPhyDrive rc=0...
+[2021/05/20 23:50:07.391] VentoyVerInPhyDrive 2 is <1.0.36>...
+[2021/05/20 23:50:07.395] PhyDrive 2 is Ventoy Disk ver:1.0.36 SecureBoot:0
+[2021/05/20 23:50:07.396] < GALAX TA1D0120A> is filtered for not USB type.
+[2021/05/20 23:50:07.396] < KXG60ZNV1T02 TOSHIBA> is filtered for not USB type.
+[2021/05/20 23:50:07.414] Load languages from json file ...
+[2021/05/20 23:50:07.415] language json file len:124378 json parse:0
+[2021/05/20 23:50:07.415] Total 37 languages ...
+[2021/05/20 23:50:07.473] Combox select change, update secure boot option: 0 0
