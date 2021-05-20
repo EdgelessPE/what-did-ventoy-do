@@ -1,6 +1,6 @@
 class _DriveInfo{
     index:number
-    capability:number
+    capacity:number
     letter:string
     removable:boolean
     flag:string
@@ -31,7 +31,7 @@ class _SystemInfo{
 
 class _WindowsInfo{
     version:string
-    bits:number
+    bits:string
     build:string
 }
 
