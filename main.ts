@@ -1,10 +1,45 @@
-import {_DriveInfo,_SystemInfo,_Ventoy2DiskInfo,_VentoyInfo,_VentoyInstallationStatus,_WindowsInfo} from './src/class'
+class _DriveInfo{
+    index:number
+    capacity:number
+    letter:string
+    removable:boolean
+    flag:string
+    ventoyStatus:_VentoyInfo
+}
+class _VentoyInfo{
+    installed:boolean
+    updated:boolean
+    version:string
+    secureBoot:boolean
+}
+class _Ventoy2DiskInfo{
+    version:string
+}
+class _VentoyOperationStatus {
+    success:boolean
+    upgrade:boolean
+    secureBoot:boolean
+    targetDrive:number
+}
+class _SystemInfo{
+    windows:_WindowsInfo
+    drives:Array<_DriveInfo>
+}
+class _WindowsInfo{
+    version:string
+    bits:string
+    build:string
+}
+class VentoyStatus {
+    systemInfo:_SystemInfo
+    ventoy2DiskInfo:_Ventoy2DiskInfo
+    ventoyOperationLog:Array<_VentoyOperationStatus>
+}
 
 interface matchNode{
     exp:RegExp
     handler?: (array:RegExpMatchArray) => string
 }
-
 class NaiveDriveInfo{
     letter:string
     capacity:number
@@ -12,7 +47,7 @@ class NaiveDriveInfo{
 }
 
 let log:string=""
-let operation_log:Array<_VentoyInstallationStatus>=[]
+let operation_log:Array<_VentoyOperationStatus>=[]
 
 
 //match util
@@ -178,7 +213,7 @@ function parseDrivesInfo(lines:Array<string>):Array<_DriveInfo>{
         if(ventoyInstalled.hasOwnProperty(index)){
             ventoyInfo=ventoyInstalled[index]
         }
-        if(ventoyUpdated.hasOwnProperty(index)){
+        if(ventoyUpdated.hasOwnProperty(index)&&ventoyUpdated[index].success){
             ventoyInfo=ventoyUpdated[index]
         }
         //匹配可移动设备的描述行
@@ -213,22 +248,37 @@ function parseDrivesInfo(lines:Array<string>):Array<_DriveInfo>{
     return result
 }
 
-function main(input_log:string){
+export default function (input_log:string):VentoyStatus{
     //配置全局log
     log=input_log
+
     //检查是否为Ventoy2Disk日志
-    let v2dVer=match("Ventoy2Disk_Version")
+    let v2dVer=match("Ventoy2Disk_Version") as string
     if(!v2dVer){
         throw "INPUT_INVALID_LOG"
     }
-    //匹配Windows版本
-    let winVer=match("Win_Version")
+
+    //匹配Windows信息
+    let w_line=match("Win_line") as string
+    let winInfo=parseWinInfo(w_line)
     
-    
+    //匹配磁盘驱动器信息
+    let d_lines=match("Drive_lines") as Array<string>
+    let driveInfo=parseDrivesInfo(d_lines)
+
+    //组装信息
+    let systemInfo:_SystemInfo={
+        drives:driveInfo,
+        windows:winInfo
+    }
+
+    let ventoy2DiskInfo:_Ventoy2DiskInfo={
+        version:v2dVer
+    }
+
+    return {
+        systemInfo,
+        ventoy2DiskInfo,
+        ventoyOperationLog:operation_log
+    }
 }
-
-
-log=require('fs').readFileSync("./examples/log_nothing.txt").toString()
-let lines=match("Drive_lines") as Array<string>
-console.log(parseDrivesInfo(lines))
-console.log(operation_log)
