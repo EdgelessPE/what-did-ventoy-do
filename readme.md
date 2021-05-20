@@ -9,17 +9,78 @@ This module can help get the status of Ventoy installing or updating process via
 
 ## Usage
 ```typescript
-import {getVentoyStatus,getDriveList,VentoyStatus,DriveList} from 'what-did-ventoy-do'
 import fs from 'fs'
+import ventoyAnalyser from './what-did-ventoy-do'
 
-let log:string=fs.readFileSync("./log.txt").toString()
+let log:string=fs.readFileSync("./examples/log_install.txt").toString()
 
 try{
-    let status:VentoyStatus=getVentoyStatus(log)
-    let list:DriveList=getDriveList(log)
+    let ventoyStatus=ventoyAnalyser(log)
+    console.log(JSON.stringify(ventoyStatus))
 }catch(err){
     console.log(err)
 }
+```
+
+## Result demo
+```json
+{
+  "systemInfo": {
+    "drives": [
+      {
+        "index": 0,
+        "letter": "D",
+        "capacity": 119323532800,
+        "removable": false,
+        "flag": "LogicalDrive",
+        "ventoyStatus": {
+          "installed": false,
+          "updated": false,
+          "version": "0.0.0",
+          "secureBoot": false
+        }
+      },
+      {
+        "index": 1,
+        "letter": "C",
+        "capacity": 1023499047424,
+        "removable": false,
+        "flag": "LogicalDrive",
+        "ventoyStatus": {
+          "installed": false,
+          "updated": false,
+          "version": "0.0.0",
+          "secureBoot": false
+        }
+      },
+      {
+        "index": 2,
+        "letter": "E",
+        "capacity": 30717394944,
+        "removable": true,
+        "flag": "SanDisk Ultra Fit",
+        "ventoyStatus": {
+          "installed": true,
+          "updated": false,
+          "version": "1.0.36",
+          "secureBoot": false
+        }
+      }
+    ],
+    "windows": { "version": "Windows 10", "bits": "64", "build": "19042" }
+  },
+  "ventoy2DiskInfo": { "version": "1.0.0.2" },
+  "ventoyOperationLog": [
+    {
+      "success": false,
+      "upgrade": true,
+      "secureBoot": false,
+      "targetDrive": 2
+    },
+    { "success": false, "upgrade": true, "secureBoot": false, "targetDrive": 2 }
+  ]
+}
+
 ```
 
 ## Used by
