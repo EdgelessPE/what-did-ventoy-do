@@ -249,8 +249,9 @@ function parseDrivesInfo(lines:Array<string>):Array<_DriveInfo>{
 }
 
 export default function (input_log:string):VentoyStatus{
-    //配置全局log
-    log=input_log
+    //使用最后一次分割作为全局log
+    let spt=input_log.split(/################################ Ventoy2Disk/)
+    log="################################ Ventoy2Disk"+spt[spt.length-1]
 
     //检查是否为Ventoy2Disk日志
     let v2dVer=match("Ventoy2Disk_Version") as string
