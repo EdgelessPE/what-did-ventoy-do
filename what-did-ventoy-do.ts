@@ -66,6 +66,17 @@ const regexTable:any={
     },
     Drive_lines:{
         exp:/LogicalDrive:\\\\.\\[^\n]*/g
+    },
+    Installed_string:{
+        exp:/Logical drive letter after write ventoy: <[A-Z]*/g,
+        handler:(r:RegExpMatchArray):string=>{
+            if(r){
+                //取最后一条结果
+                return r[r.length-1].split("<")[1]
+            }else{
+                return ""
+            }
+        }
     }
 }
 function match(key:string):RegExpMatchArray|string{
@@ -153,6 +164,47 @@ function findVentoyInstalledOrUpdated(install:boolean):any{
 
     return found
 }
+function findLetterRemoved():Array<string> {
+    let result:Array<string>=[]
+    //匹配语句
+    let lines=log.match(/[A-Z]:\\ is ventoy part2, delete mountpoint/)
+    if(lines){
+        //推入结果数组
+        for(let i=0;i<lines.length;i++){
+            result.push(lines[i][0])
+        }
+    }
+
+    return result
+}
+function findLetterWithVentoyInstalled():string {
+    let finalLetter:string=""
+    //匹配所有Logical drive letter after write ventoy: <>，读取最后一条的<>内容
+    let letters:string=match("Installed_string") as string
+    //处理空串情况
+    if(letters.length==0){
+        //查询Ventoy2Disk为其挂载的位置
+        let m=log.match(/SetVolumeMountPoint <[A-Z]/)
+        if(m){
+            let line=m[m.length-1]
+            finalLetter=line[line.length-1]
+        }else{
+            return ""
+        }
+    }else{
+        //检查被确认的盘符
+        let matchLines=log.match(/[A-Z]:\\ is ventoy part1, already mounted/)
+        let targetLetter=matchLines[matchLines.length-1][0]
+
+        if(letters.includes(targetLetter)){
+            finalLetter=targetLetter
+        }else{
+            return ""
+        }
+    }
+
+    return finalLetter
+}
 
 //parser
 function parseWinInfo(line:string):_WindowsInfo{
@@ -185,20 +237,23 @@ function parseDrivesInfo(lines:Array<string>):Array<_DriveInfo>{
         }
     }
 
-    //去重
-    // for(let i=0;i<lines.length;i++){
-    //     let result=soloParser(lines[i])
-        // if(!hash.hasOwnProperty(result.index)){
-        //     hash[result.index]=result
-        // }
-    // }
     //获取Ventoy安装状态
     let ventoyExisted:any=findVentoyExisted()
     let ventoyInstalled:any=findVentoyInstalledOrUpdated(true)
     let ventoyUpdated:any=findVentoyInstalledOrUpdated(false)
 
+    //lines倒序，保证信息都是最新的
+    lines=lines.reverse()
+
+    //使用hash表忽略已被移除的盘符
+    let removedLetters=findLetterRemoved()
+    removedLetters.forEach((item)=>{
+        hash[item]=true
+    })
+
     //综合信息
     let result:Array<_DriveInfo>=[]
+    let installedLetter=findLetterWithVentoyInstalled()
     for (let i=0;i<lines.length;i++) {
         //获取Naive描述
         let n:NaiveDriveInfo=soloParser(lines[i])
@@ -225,6 +280,12 @@ function parseDrivesInfo(lines:Array<string>):Array<_DriveInfo>{
         if(ventoyUpdated.hasOwnProperty(index)&&ventoyUpdated[index].success){
             ventoyInfo=ventoyUpdated[index]
         }
+        //校验Ventoy写入的目标盘的VentoyStatus是否正确
+        if(installedLetter==n.letter&&!ventoyInfo.installed){
+            throw "VENTOY_TARGET_LETTER_CHANGED"
+        }
+
+
         //匹配可移动设备的描述行
         let rline=matchRemovableLineWithIndex(Number(index))
 
