@@ -1,0 +1,188 @@
+[2021/05/22 12:13:59.202] 
+################################ Ventoy2Disk 1.0.0.2 ################################
+[2021/05/22 12:13:59.249] Control Flag: 0 1 1
+[2021/05/22 12:13:59.249] Windows Version : Windows 10 64-bit (Build 21382)
+[2021/05/22 12:13:59.249] 
+===================== Enum All PhyDrives =====================
+[2021/05/22 12:13:59.249] RegOpenKeyExA <SYSTEM\CurrentControlSet\Services\disk\Enum> Ret:0
+[2021/05/22 12:13:59.249] RegQueryValueExA <Count> ret:0  Size:4 Value:3
+[2021/05/22 12:13:59.249] GetPhysicalDriveCount: 3
+[2021/05/22 12:13:59.249] Logical Drives: 0x4dc
+[2021/05/22 12:13:59.249] LogicalDrive:\\.\C: PhyDrive:1 Offset:407896064 ExtentLength:125120095232
+[2021/05/22 12:13:59.249] C --> 1
+[2021/05/22 12:13:59.256] LogicalDrive:\\.\D: PhyDrive:0 Offset:16777216 ExtentLength:332859965440
+[2021/05/22 12:13:59.257] D --> 0
+[2021/05/22 12:13:59.257] DeviceIoControl IOCTL_VOLUME_GET_VOLUME_DISK_EXTENTS failed \\.\E:, error:1
+[2021/05/22 12:13:59.258] E --> -1
+[2021/05/22 12:13:59.258] LogicalDrive:\\.\G: PhyDrive:0 Offset:828415934464 ExtentLength:171788206080
+[2021/05/22 12:13:59.258] G --> 0
+[2021/05/22 12:13:59.258] LogicalDrive:\\.\H: PhyDrive:2 Offset:1048576 ExtentLength:16105061888
+[2021/05/22 12:13:59.259] H --> 2
+[2021/05/22 12:13:59.259] DeviceIoControl IOCTL_VOLUME_GET_VOLUME_DISK_EXTENTS failed \\.\K:, error:21
+[2021/05/22 12:13:59.259] K --> -1
+[2021/05/22 12:13:59.259] Create file Handle:FFFFFFFF \\.\PhysicalDrive0 status:32
+[2021/05/22 12:13:59.259] Create file Handle:00000194 \\.\PhysicalDrive1 status:0
+[2021/05/22 12:13:59.259] PHYSICALDRIVE1 size 128035676160 bytes
+[2021/05/22 12:13:59.259] Create file Handle:00000194 \\.\PhysicalDrive2 status:0
+[2021/05/22 12:13:59.259] PHYSICALDRIVE2 size 16106127360 bytes
+[2021/05/22 12:13:59.259] PhyDrv:1 BusType:SATA Removable:0 Size:128GB(128035676160) Name: KINGSTON MS80000058588
+[2021/05/22 12:13:59.259] PhyDrv:2 BusType:USB  Removable:1 Size:15GB(16106127360) Name:Generic Flash Disk
+[2021/05/22 12:13:59.259] LogicalDrive:\\.\C: PhyDrive:1 Offset:407896064 ExtentLength:125120095232
+[2021/05/22 12:13:59.259] Logical Drive:C  ===> PhyDrive:1
+[2021/05/22 12:13:59.259] LogicalDrive:\\.\D: PhyDrive:0 Offset:16777216 ExtentLength:332859965440
+[2021/05/22 12:13:59.259] Logical Drive:D  ===> PhyDrive:0
+[2021/05/22 12:13:59.259] DeviceIoControl IOCTL_VOLUME_GET_VOLUME_DISK_EXTENTS failed \\.\E:, error:1
+[2021/05/22 12:13:59.259] Logical Drive:E  ===> PhyDrive:-1
+[2021/05/22 12:13:59.259] LogicalDrive:\\.\G: PhyDrive:0 Offset:828415934464 ExtentLength:171788206080
+[2021/05/22 12:13:59.259] Logical Drive:G  ===> PhyDrive:0
+[2021/05/22 12:13:59.259] LogicalDrive:\\.\H: PhyDrive:2 Offset:1048576 ExtentLength:16105061888
+[2021/05/22 12:13:59.259] Logical Drive:H  ===> PhyDrive:2
+[2021/05/22 12:13:59.259] DeviceIoControl IOCTL_VOLUME_GET_VOLUME_DISK_EXTENTS failed \\.\K:, error:21
+[2021/05/22 12:13:59.259] Logical Drive:K  ===> PhyDrive:-1
+[2021/05/22 12:13:59.259] Create file Handle:00000190 \\.\PhysicalDrive2 status:0
+[2021/05/22 12:13:59.259] Read MBR Ret:1 Size:512 code:183
+[2021/05/22 12:13:59.259] =========== Partition Table 1 ============
+[2021/05/22 12:13:59.259] PartTbl.Active = 0x0
+[2021/05/22 12:13:59.259] PartTbl.FsFlag = 0xee
+[2021/05/22 12:13:59.259] PartTbl.StartSectorId = 1
+[2021/05/22 12:13:59.259] PartTbl.SectorCount = 4294967295
+[2021/05/22 12:13:59.259] PartTbl.StartHead = 0
+[2021/05/22 12:13:59.259] PartTbl.StartSector = 2
+[2021/05/22 12:13:59.259] PartTbl.StartCylinder = 0
+[2021/05/22 12:13:59.259] PartTbl.EndHead = 254
+[2021/05/22 12:13:59.259] PartTbl.EndSector = 63
+[2021/05/22 12:13:59.275] PartTbl.EndCylinder = 663
+[2021/05/22 12:13:59.275] =========== Partition Table 2 ============
+[2021/05/22 12:13:59.275] PartTbl.Active = 0x0
+[2021/05/22 12:13:59.275] PartTbl.FsFlag = 0x0
+[2021/05/22 12:13:59.275] PartTbl.StartSectorId = 0
+[2021/05/22 12:13:59.275] PartTbl.SectorCount = 0
+[2021/05/22 12:13:59.275] PartTbl.StartHead = 0
+[2021/05/22 12:13:59.275] PartTbl.StartSector = 0
+[2021/05/22 12:13:59.275] PartTbl.StartCylinder = 0
+[2021/05/22 12:13:59.275] PartTbl.EndHead = 0
+[2021/05/22 12:13:59.275] PartTbl.EndSector = 0
+[2021/05/22 12:13:59.275] PartTbl.EndCylinder = 0
+[2021/05/22 12:13:59.275] =========== Partition Table 3 ============
+[2021/05/22 12:13:59.275] PartTbl.Active = 0x0
+[2021/05/22 12:13:59.275] PartTbl.FsFlag = 0x0
+[2021/05/22 12:13:59.275] PartTbl.StartSectorId = 0
+[2021/05/22 12:13:59.275] PartTbl.SectorCount = 0
+[2021/05/22 12:13:59.275] PartTbl.StartHead = 0
+[2021/05/22 12:13:59.275] PartTbl.StartSector = 0
+[2021/05/22 12:13:59.275] PartTbl.StartCylinder = 0
+[2021/05/22 12:13:59.275] PartTbl.EndHead = 0
+[2021/05/22 12:13:59.275] PartTbl.EndSector = 0
+[2021/05/22 12:13:59.275] PartTbl.EndCylinder = 0
+[2021/05/22 12:13:59.275] =========== Partition Table 4 ============
+[2021/05/22 12:13:59.275] PartTbl.Active = 0x0
+[2021/05/22 12:13:59.275] PartTbl.FsFlag = 0x0
+[2021/05/22 12:13:59.275] PartTbl.StartSectorId = 0
+[2021/05/22 12:13:59.275] PartTbl.SectorCount = 0
+[2021/05/22 12:13:59.275] PartTbl.StartHead = 0
+[2021/05/22 12:13:59.275] PartTbl.StartSector = 0
+[2021/05/22 12:13:59.275] PartTbl.StartCylinder = 0
+[2021/05/22 12:13:59.275] PartTbl.EndHead = 0
+[2021/05/22 12:13:59.275] PartTbl.EndSector = 0
+[2021/05/22 12:13:59.275] PartTbl.EndCylinder = 0
+[2021/05/22 12:13:59.290] Invalid ventoy efi part name
+[2021/05/22 12:13:59.290] < KINGSTON MS80000058588> is filtered for not USB type.
+[2021/05/22 12:13:59.347] Load languages from json file ...
+[2021/05/22 12:13:59.347] language json file len:124378 json parse:0
+[2021/05/22 12:13:59.347] Total 37 languages ...
+[2021/05/22 12:13:59.396] Not ventoy disk, clear secure boot option
+[2021/05/22 12:14:31.109] SpaceMB:0 SizeInMB:15360
+[2021/05/22 12:14:31.114] InstallVentoy2PhyDrive GPT PhyDrive2 <<Generic Flash Disk 15GB>>
+[2021/05/22 12:14:31.119] Copy boot img success
+[2021/05/22 12:14:31.119] Disk signature: 0x8754df0e
+[2021/05/22 12:14:31.119] Part1SectorCount:31389663 is not aligned by 4KB (7)
+[2021/05/22 12:14:31.120] Disk need to align with 4KB 7
+[2021/05/22 12:14:31.120] Lock disk for clean ............................. 
+[2021/05/22 12:14:31.120] QueryDosDeviceA success \Device\Harddisk2\DR2
+[2021/05/22 12:14:31.121] [0] CreateFileA \\.\PhysicalDrive2 code:0 000002D4
+[2021/05/22 12:14:31.122] FSCTL_LOCK_VOLUME success
+[2021/05/22 12:14:31.122] LogicalDrive:\\.\C: PhyDrive:1 Offset:407896064 ExtentLength:125120095232
+[2021/05/22 12:14:31.122] LogicalDrive:\\.\D: PhyDrive:0 Offset:16777216 ExtentLength:332859965440
+[2021/05/22 12:14:31.123] DeviceIoControl IOCTL_VOLUME_GET_VOLUME_DISK_EXTENTS failed \\.\E:, error:1
+[2021/05/22 12:14:31.123] LogicalDrive:\\.\G: PhyDrive:0 Offset:828415934464 ExtentLength:171788206080
+[2021/05/22 12:14:31.123] LogicalDrive:\\.\H: PhyDrive:2 Offset:1048576 ExtentLength:16105061888
+[2021/05/22 12:14:31.124] H: is belong to phydrive2
+[2021/05/22 12:14:31.124] DeviceIoControl IOCTL_VOLUME_GET_VOLUME_DISK_EXTENTS failed \\.\K:, error:21
+[2021/05/22 12:14:31.125] Delete mountpoint H:\ ret:1 code:0
+[2021/05/22 12:14:31.125] Will use 'H:' as volume mountpoint
+[2021/05/22 12:14:32.331] Deleting ALL partition(s) from disk '\\?\PhysicalDrive2':
+[2021/05/22 12:14:32.331] * Partition 1 (offset: 1048576, size: 16105061888)
+[2021/05/22 12:14:32.425] Deleting all partitions ......................... OK
+[2021/05/22 12:14:32.425] Lock disk for write ............................. 
+[2021/05/22 12:14:32.425] QueryDosDeviceA success \Device\Harddisk2\DR2
+[2021/05/22 12:14:32.425] [0] CreateFileA \\.\PhysicalDrive2 code:0 00000368
+[2021/05/22 12:14:32.425] Opened \\.\PhysicalDrive2 for exclusive write access
+[2021/05/22 12:14:32.425] FSCTL_LOCK_VOLUME success
+[2021/05/22 12:14:32.441] Wait for format part1 ...
+[2021/05/22 12:14:37.446] Formatting part1 exFAT ...
+[2021/05/22 12:14:37.446] Formatting Part1 exFAT ...
+[2021/05/22 12:14:37.586] Formatting Part1 exFAT success
+[2021/05/22 12:14:37.602] mount part 0
+[2021/05/22 12:14:37.602] f_setlabel 0
+[2021/05/22 12:14:37.602] umount part 12
+[2021/05/22 12:14:37.602] Writing part2 FAT img ...
+[2021/05/22 12:14:37.602] FormatPart2Fat 31391704...
+[2021/05/22 12:14:37.618] Set file pointer: 16072552448  New pointer:16072552448
+[2021/05/22 12:14:37.618] Malloc whole img buffer success, now decompress ...
+[2021/05/22 12:14:38.353] decompress finished success
+[2021/05/22 12:14:38.353] VentoyProcSecureBoot 1 ...
+[2021/05/22 12:14:38.353] Secure boot is enabled ...
+[2021/05/22 12:14:38.400] Write part data bRet:1 dwSize:1048576 code:183
+[2021/05/22 12:14:38.447] Write part data bRet:1 dwSize:1048576 code:183
+[2021/05/22 12:14:38.494] Write part data bRet:1 dwSize:1048576 code:183
+[2021/05/22 12:14:38.556] Write part data bRet:1 dwSize:1048576 code:183
+[2021/05/22 12:14:38.603] Write part data bRet:1 dwSize:1048576 code:183
+[2021/05/22 12:14:38.650] Write part data bRet:1 dwSize:1048576 code:183
+[2021/05/22 12:14:38.697] Write part data bRet:1 dwSize:1048576 code:183
+[2021/05/22 12:14:38.760] Write part data bRet:1 dwSize:1048576 code:183
+[2021/05/22 12:14:41.228] Write part data bRet:1 dwSize:1048576 code:183
+[2021/05/22 12:14:41.291] Write part data bRet:1 dwSize:1048576 code:183
+[2021/05/22 12:14:41.338] Write part data bRet:1 dwSize:1048576 code:183
+[2021/05/22 12:14:41.400] Write part data bRet:1 dwSize:1048576 code:183
+[2021/05/22 12:14:41.447] Write part data bRet:1 dwSize:1048576 code:183
+[2021/05/22 12:14:41.494] Write part data bRet:1 dwSize:1048576 code:183
+[2021/05/22 12:14:41.541] Write part data bRet:1 dwSize:1048576 code:183
+[2021/05/22 12:14:41.603] Write part data bRet:1 dwSize:1048576 code:183
+[2021/05/22 12:14:41.650] Write part data bRet:1 dwSize:1048576 code:183
+[2021/05/22 12:14:41.697] Write part data bRet:1 dwSize:1048576 code:183
+[2021/05/22 12:14:41.744] Write part data bRet:1 dwSize:1048576 code:183
+[2021/05/22 12:14:41.806] Write part data bRet:1 dwSize:1048576 code:183
+[2021/05/22 12:14:42.822] Write part data bRet:1 dwSize:1048576 code:183
+[2021/05/22 12:14:42.869] Write part data bRet:1 dwSize:1048576 code:183
+[2021/05/22 12:14:42.916] Write part data bRet:1 dwSize:1048576 code:183
+[2021/05/22 12:14:42.978] Write part data bRet:1 dwSize:1048576 code:183
+[2021/05/22 12:14:43.025] Write part data bRet:1 dwSize:1048576 code:183
+[2021/05/22 12:14:43.072] Write part data bRet:1 dwSize:1048576 code:183
+[2021/05/22 12:14:43.121] Write part data bRet:1 dwSize:1048576 code:183
+[2021/05/22 12:14:43.182] Write part data bRet:1 dwSize:1048576 code:183
+[2021/05/22 12:14:43.229] Write part data bRet:1 dwSize:1048576 code:183
+[2021/05/22 12:14:43.276] Write part data bRet:1 dwSize:1048576 code:183
+[2021/05/22 12:14:43.323] Write part data bRet:1 dwSize:1048576 code:183
+[2021/05/22 12:14:43.385] Write part data bRet:1 dwSize:1048576 code:183
+[2021/05/22 12:14:43.401] Writing Boot Image ............................. 
+[2021/05/22 12:14:43.401] WriteGrubStage1ToPhyDrive ...
+[2021/05/22 12:14:43.416] Write GPT stage1 ...
+[2021/05/22 12:14:44.448] WriteFile Ret:1 dwSize:1031168 ErrCode:183
+[2021/05/22 12:14:44.463] Writing Partition Table ........................ 
+[2021/05/22 12:14:44.495] Write GPT Info OK ...
+[2021/05/22 12:14:44.510] Mounting Ventoy Partition ....................... 
+[2021/05/22 12:14:45.531] LogicalDrive:\\.\C: PhyDrive:1 Offset:407896064 ExtentLength:125120095232
+[2021/05/22 12:14:45.531] LogicalDrive:\\.\D: PhyDrive:0 Offset:16777216 ExtentLength:332859965440
+[2021/05/22 12:14:45.531] DeviceIoControl IOCTL_VOLUME_GET_VOLUME_DISK_EXTENTS failed \\.\E:, error:1
+[2021/05/22 12:14:45.531] LogicalDrive:\\.\F: PhyDrive:2 Offset:1048576 ExtentLength:16071503872
+[2021/05/22 12:14:45.531] F: is belong to phydrive2
+[2021/05/22 12:14:45.531] LogicalDrive:\\.\G: PhyDrive:0 Offset:828415934464 ExtentLength:171788206080
+[2021/05/22 12:14:45.531] LogicalDrive:\\.\H: PhyDrive:2 Offset:16072552448 ExtentLength:33554432
+[2021/05/22 12:14:45.531] H: is belong to phydrive2
+[2021/05/22 12:14:45.531] DeviceIoControl IOCTL_VOLUME_GET_VOLUME_DISK_EXTENTS failed \\.\K:, error:21
+[2021/05/22 12:14:45.531] Logical drive letter after write ventoy: <FH>
+[2021/05/22 12:14:45.531] F:\ is ventoy part1, already mounted
+[2021/05/22 12:14:45.531] H:\ is ventoy part2, delete mountpoint
+[2021/05/22 12:14:45.531] OK
+
+[2021/05/22 12:14:46.729] Combox select change, update secure boot option: 1 1

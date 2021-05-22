@@ -1,4 +1,4 @@
-class _DriveInfo{
+interface _DriveInfo{
     index:number
     capacity:number
     letter:string
@@ -6,31 +6,31 @@ class _DriveInfo{
     flag:string
     ventoyStatus:_VentoyInfo
 }
-class _VentoyInfo{
+interface _VentoyInfo{
     installed:boolean
     updated:boolean
     version:string
     secureBoot:boolean
 }
-class _Ventoy2DiskInfo{
+interface _Ventoy2DiskInfo{
     version:string
 }
-class _VentoyOperationStatus {
+interface _VentoyOperationStatus {
     success:boolean
     upgrade:boolean
     secureBoot:boolean
     targetDrive:number
 }
-class _SystemInfo{
+interface _SystemInfo{
     windows:_WindowsInfo
     drives:Array<_DriveInfo>
 }
-class _WindowsInfo{
+interface _WindowsInfo{
     version:string
     bits:string
     build:string
 }
-class VentoyStatus {
+interface VentoyStatus {
     systemInfo:_SystemInfo
     ventoy2DiskInfo:_Ventoy2DiskInfo
     ventoyOperationLog:Array<_VentoyOperationStatus>
@@ -40,7 +40,7 @@ interface matchNode{
     exp:RegExp
     handler?: (array:RegExpMatchArray) => string
 }
-class NaiveDriveInfo{
+interface NaiveDriveInfo{
     letter:string
     capacity:number
     index:number
@@ -85,16 +85,18 @@ function match(key:string):RegExpMatchArray|string{
 function findVentoyExisted():any {
     //查找存在语句
     let exist_lines=log.match(/PhyDrive \d+ is Ventoy Disk[^\n\r]*/g)
-    //分析语句
     let found:any={}
-    for(let i=0;i<exist_lines.length;i++){
-        let line:string=exist_lines[i]
-        let index:string=line.match(/PhyDrive \d+/)[0].split(" ")[1]
-        found[index]={
-            installed:true,
-            updated:false,
-            version:line.match(/ver:\d+.\d+(.\d+)*/)[0].split(":")[1],
-            secureBoot:line.match(/SecureBoot:\d/)[0].split(":")[1]!="0"
+    if(exist_lines){
+        //分析语句
+        for(let i=0;i<exist_lines.length;i++){
+            let line:string=exist_lines[i]
+            let index:string=line.match(/PhyDrive \d+/)[0].split(" ")[1]
+            found[index]={
+                installed:true,
+                updated:false,
+                version:line.match(/ver:\d+.\d+(.\d+)*/)[0].split(":")[1],
+                secureBoot:line.match(/SecureBoot:\d/)[0].split(":")[1]!="0"
+            }
         }
     }
 
@@ -168,7 +170,7 @@ function parseDrivesInfo(lines:Array<string>):Array<_DriveInfo>{
         let letter_match=line.match(/LogicalDrive:\\\\.\\[A-Z]/)[0]
         return{
             letter:letter_match[letter_match.length-1],
-            index:Number(line.match(/PhyDrive:\d+/)[0].split(":")[1]),
+            index:Number(line.match(/PhyDrive:-*\d+/)[0].split(":")[1]),
             capacity:Number(line.match(/ExtentLength:\d+/)[0].split(":")[1])
         }
     }
@@ -184,12 +186,12 @@ function parseDrivesInfo(lines:Array<string>):Array<_DriveInfo>{
     }
 
     //去重
-    for(let i=0;i<lines.length;i++){
-        let result=soloParser(lines[i])
-        if(!hash.hasOwnProperty(result.index)){
-            hash[result.index]=result
-        }
-    }
+    // for(let i=0;i<lines.length;i++){
+    //     let result=soloParser(lines[i])
+        // if(!hash.hasOwnProperty(result.index)){
+        //     hash[result.index]=result
+        // }
+    // }
     //获取Ventoy安装状态
     let ventoyExisted:any=findVentoyExisted()
     let ventoyInstalled:any=findVentoyInstalledOrUpdated(true)
@@ -197,9 +199,16 @@ function parseDrivesInfo(lines:Array<string>):Array<_DriveInfo>{
 
     //综合信息
     let result:Array<_DriveInfo>=[]
-    for (let index in hash) {
+    for (let i=0;i<lines.length;i++) {
         //获取Naive描述
-        let n:NaiveDriveInfo=hash[index]
+        let n:NaiveDriveInfo=soloParser(lines[i])
+        let index=n.index
+        //根据盘符去重
+        if(hash.hasOwnProperty(n.letter)){
+            continue
+        }else{
+            hash[n.letter]=true
+        }
         //获取Ventoy信息
         let ventoyInfo:_VentoyInfo={
             installed:false,

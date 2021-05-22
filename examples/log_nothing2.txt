@@ -1,0 +1,38 @@
+[2021/05/22 12:07:46.466] 
+################################ Ventoy2Disk 1.0.0.2 ################################
+[2021/05/22 12:07:46.497] Control Flag: 0 1 1
+[2021/05/22 12:07:46.497] Windows Version : Windows 10 64-bit (Build 21382)
+[2021/05/22 12:07:46.497] 
+===================== Enum All PhyDrives =====================
+[2021/05/22 12:07:46.497] RegOpenKeyExA <SYSTEM\CurrentControlSet\Services\disk\Enum> Ret:0
+[2021/05/22 12:07:46.497] RegQueryValueExA <Count> ret:0  Size:4 Value:2
+[2021/05/22 12:07:46.497] GetPhysicalDriveCount: 2
+[2021/05/22 12:07:46.497] Logical Drives: 0x45c
+[2021/05/22 12:07:46.497] LogicalDrive:\\.\C: PhyDrive:1 Offset:407896064 ExtentLength:125120095232
+[2021/05/22 12:07:46.497] C --> 1
+[2021/05/22 12:07:46.513] LogicalDrive:\\.\D: PhyDrive:0 Offset:16777216 ExtentLength:332859965440
+[2021/05/22 12:07:46.513] D --> 0
+[2021/05/22 12:07:46.513] DeviceIoControl IOCTL_VOLUME_GET_VOLUME_DISK_EXTENTS failed \\.\E:, error:1
+[2021/05/22 12:07:46.513] E --> -1
+[2021/05/22 12:07:46.513] LogicalDrive:\\.\G: PhyDrive:0 Offset:828415934464 ExtentLength:171788206080
+[2021/05/22 12:07:46.513] G --> 0
+[2021/05/22 12:07:46.513] DeviceIoControl IOCTL_VOLUME_GET_VOLUME_DISK_EXTENTS failed \\.\K:, error:21
+[2021/05/22 12:07:46.513] K --> -1
+[2021/05/22 12:07:46.513] Create file Handle:FFFFFFFF \\.\PhysicalDrive0 status:32
+[2021/05/22 12:07:46.513] Create file Handle:00000190 \\.\PhysicalDrive1 status:0
+[2021/05/22 12:07:46.513] PHYSICALDRIVE1 size 128035676160 bytes
+[2021/05/22 12:07:46.513] PhyDrv:1 BusType:SATA Removable:0 Size:128GB(128035676160) Name: KINGSTON MS80000058588
+[2021/05/22 12:07:46.513] LogicalDrive:\\.\C: PhyDrive:1 Offset:407896064 ExtentLength:125120095232
+[2021/05/22 12:07:46.513] Logical Drive:C  ===> PhyDrive:1
+[2021/05/22 12:07:46.513] LogicalDrive:\\.\D: PhyDrive:0 Offset:16777216 ExtentLength:332859965440
+[2021/05/22 12:07:46.513] Logical Drive:D  ===> PhyDrive:0
+[2021/05/22 12:07:46.513] DeviceIoControl IOCTL_VOLUME_GET_VOLUME_DISK_EXTENTS failed \\.\E:, error:1
+[2021/05/22 12:07:46.513] Logical Drive:E  ===> PhyDrive:-1
+[2021/05/22 12:07:46.513] LogicalDrive:\\.\G: PhyDrive:0 Offset:828415934464 ExtentLength:171788206080
+[2021/05/22 12:07:46.513] Logical Drive:G  ===> PhyDrive:0
+[2021/05/22 12:07:46.513] DeviceIoControl IOCTL_VOLUME_GET_VOLUME_DISK_EXTENTS failed \\.\K:, error:21
+[2021/05/22 12:07:46.513] Logical Drive:K  ===> PhyDrive:-1
+[2021/05/22 12:07:46.513] < KINGSTON MS80000058588> is filtered for not USB type.
+[2021/05/22 12:07:46.591] Load languages from json file ...
+[2021/05/22 12:07:46.591] language json file len:124378 json parse:0
+[2021/05/22 12:07:46.591] Total 37 languages ...
