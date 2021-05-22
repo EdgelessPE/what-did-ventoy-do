@@ -5,6 +5,7 @@ interface _DriveInfo{
     removable:boolean
     flag:string
     ventoyStatus:_VentoyInfo
+    busType:string
 }
 interface _VentoyInfo{
     installed:boolean
@@ -227,8 +228,8 @@ function parseDrivesInfo(lines:Array<string>):Array<_DriveInfo>{
             capacity:Number(line.match(/ExtentLength:\d+/)[0].split(":")[1])
         }
     }
-    let matchRemovableLineWithIndex=function (index:number):string|void {
-        let regex_str="/PhyDrv:"+index+" BusType:USB[^\\n\\r]*/"
+    let matchDriveDetailLine=function (index:number):string|void {
+        let regex_str="/PhyDrv:"+index+" BusType:[^\\n\\r]*/"
         let regex:RegExp=eval(regex_str)
         let result:Array<string>=log.match(regex)
         if(result){
@@ -287,31 +288,34 @@ function parseDrivesInfo(lines:Array<string>):Array<_DriveInfo>{
         }
 
 
-        //匹配可移动设备的描述行
-        let rline=matchRemovableLineWithIndex(Number(index))
+        //匹配可能存在的设备的描述行
+        let rline=matchDriveDetailLine(Number(index))
 
         //填充信息
         if(rline){
-            //设备是可移动设备，匹配详细描述
+            //找到详细描述，匹配详细描述
             let name_match:string=rline.match(/Name:[^\n]+/)[0]
             let removable_match:string=rline.match(/Removable:[^\n]+/)[0]
+            let busType_match:string=rline.match(/BusType:[^\s]+/)[0]
             result.push({
                 index:Number(index),
                 letter:n.letter,
                 capacity:n.capacity,
                 removable:removable_match[removable_match.length - 1] != "0",
                 flag:name_match.split(":")[1],
-                ventoyStatus:ventoyInfo
+                ventoyStatus:ventoyInfo,
+                busType:busType_match.split(":")[1]
             })
         }else{
-            //设备为本地磁盘，填充缺省值
+            //填充缺省值
             result.push({
                 index:Number(index),
                 letter:n.letter,
                 capacity:n.capacity,
                 removable:false,
                 flag:"LogicalDrive",
-                ventoyStatus:ventoyInfo
+                ventoyStatus:ventoyInfo,
+                busType:"Unknown"
             })
         }
     }

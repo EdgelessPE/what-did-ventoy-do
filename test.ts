@@ -1,7 +1,7 @@
 import fs from 'fs'
 import ventoyAnalyser from './what-did-ventoy-do'
 
-let log:string=fs.readFileSync("./examples/log_mix.txt").toString()
+let log:string=fs.readFileSync("./examples/log_install.txt").toString()
 
 try{
     let ventoyStatus=ventoyAnalyser(log)
