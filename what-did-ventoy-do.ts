@@ -147,10 +147,11 @@ function findVentoyInstalledOrUpdated(install:boolean):any{
 
         //推入found
         found[index]={
-            installed:install&&success,
+            installed:success||!install,
             updated:!install&&success,
             secureBoot,
-            version:"Unknown"
+            version:"Unknown",
+            success
         }
 
         //记录到ventoy操作日志
@@ -257,7 +258,7 @@ function parseDrivesInfo(lines:Array<string>):Array<_DriveInfo>{
     for (let i=0;i<lines.length;i++) {
         //获取Naive描述
         let n:NaiveDriveInfo=soloParser(lines[i])
-        let index=n.index
+        let index=n.index.toString()
         //根据盘符去重
         if(hash.hasOwnProperty(n.letter)){
             continue
