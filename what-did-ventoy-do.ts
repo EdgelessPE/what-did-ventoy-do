@@ -171,9 +171,14 @@ function findLetterRemoved():Array<string> {
     //匹配语句
     let lines=log.match(/[A-Z]:\\ is ventoy part2, delete mountpoint/)
     if(lines){
-        //推入结果数组
         for(let i=0;i<lines.length;i++){
-            result.push(lines[i][0])
+            let letter=lines[i][0]
+            //检查挂载点是否被Part1复用
+            let check=log.match("SetVolumeMountPoint <"+letter)
+            if(!check){
+                //推入结果数组
+                result.push()
+            }
         }
     }
 
@@ -196,7 +201,19 @@ function findLetterWithVentoyInstalled():string {
     }else{
         //检查被确认的盘符
         let matchLines=log.match(/[A-Z]:\\ is ventoy part1, already mounted/)
-        let targetLetter=matchLines[matchLines.length-1][0]
+        let targetLetter
+
+        if(matchLines==null){
+            //此时挂载上了Part2，Ventoy会为Part1执行挂载
+            //SetVolumeMountPoint <E:\>
+            matchLines=log.match(/SetVolumeMountPoint <[A-Z]/)
+            //使用被挂载的盘符
+            let line=matchLines[matchLines.length-1]
+            targetLetter=line[line.length-1]
+        }else{
+            //Part1即正确
+            targetLetter=matchLines[matchLines.length-1][0]
+        }
 
         if(letters.includes(targetLetter)){
             finalLetter=targetLetter
