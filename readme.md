@@ -1,7 +1,7 @@
 # What did Ventoy do ?
 
 ## Introduction
-[Ventoy](https://www.ventoy.net/) is an open source tool to create bootable USB drive for ISO/WIM/IMG/VHD(x)/EFI files
+[Ventoy](https://www.ventoy.net/) is an open source tool to create bootable USB flash device for ISO/WIM/IMG/VHD(x)/EFI files
 
 [Edgeless Hub](https://github.com/EdgelessPE/edgeless-hub) uses Ventoy to create bootable USB drive,while the Windows version of Ventoy2Disk hasn't provide any interface to allow an other application interact with Ventoy2Disk
 
