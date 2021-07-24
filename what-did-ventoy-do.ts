@@ -301,7 +301,7 @@ function parseDrivesInfo(lines:Array<string>):Array<_DriveInfo>{
                 index:Number(index),
                 letter:n.letter,
                 capacity:n.capacity,
-                removable:removable_match[removable_match.length - 1] != "0",
+                removable:removable_match.includes("Removable:1"),
                 flag:name_match.split(":")[1],
                 ventoyStatus:ventoyInfo,
                 busType:busType_match.split(":")[1]
