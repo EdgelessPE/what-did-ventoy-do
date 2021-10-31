@@ -60,7 +60,7 @@ const regexTable:any={
         }
     },
     Win_line:{
-        exp:/Windows Version : [^\n]*/,
+        exp:/Windows Version\s*:\s*[^\n]*/,
         handler:(r:RegExpMatchArray):string=>{
             return r[0]
         }
