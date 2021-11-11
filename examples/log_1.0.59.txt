@@ -1,0 +1,114 @@
+[2021/11/11 11:32:35.558] 
+##################################################################################
+######################### Ventoy2DiskX86 1.0.0.3 (1.0.59) #########################
+##################################################################################
+[2021/11/11 11:32:35.558] Current directory:<F>
+[2021/11/11 11:32:35.560] id=492/7992
+[2021/11/11 11:32:35.560] PPath:<C:\Windows\System32\cmd.exe>
+[2021/11/11 11:32:35.569] PSize:<236544 231KB>
+[2021/11/11 11:32:35.569] Lunch main process 0
+[2021/11/11 11:32:35.569] Control Flag: 0 1 1
+[2021/11/11 11:32:35.569] Windows Version: <<Windows 10 Pro, 64-bit (Build 19042.1348)>>
+[2021/11/11 11:32:35.569] 
+===================== Enum All PhyDrives =====================
+[2021/11/11 11:32:35.570] RegOpenKeyExA <SYSTEM\CurrentControlSet\Services\disk\Enum> Ret:0
+[2021/11/11 11:32:35.570] RegQueryValueExA <Count> ret:0  Size:4 Value:3
+[2021/11/11 11:32:35.570] GetPhysicalDriveCount: 3
+[2021/11/11 11:32:35.570] Logical Drives: 0x1fc
+[2021/11/11 11:32:35.570] LogicalDrive:\\.\C: PhyDrive:1 Offset:239075328 ExtentLength:355408544256
+[2021/11/11 11:32:35.570] C --> 1
+[2021/11/11 11:32:35.570] LogicalDrive:\\.\D: PhyDrive:0 Offset:2097152 ExtentLength:2780991324672
+[2021/11/11 11:32:35.570] D --> 0
+[2021/11/11 11:32:35.570] LogicalDrive:\\.\E: PhyDrive:0 Offset:2780995518464 ExtentLength:110595408384
+[2021/11/11 11:32:35.570] E --> 0
+[2021/11/11 11:32:35.570] LogicalDrive:\\.\F: PhyDrive:0 Offset:2891593023488 ExtentLength:108997732864
+[2021/11/11 11:32:35.570] F --> 0
+[2021/11/11 11:32:35.570] LogicalDrive:\\.\G: PhyDrive:1 Offset:355649716224 ExtentLength:109521666560
+[2021/11/11 11:32:35.570] G --> 1
+[2021/11/11 11:32:35.570] LogicalDrive:\\.\H: PhyDrive:1 Offset:465173479424 ExtentLength:46934485504
+[2021/11/11 11:32:35.570] H --> 1
+[2021/11/11 11:32:35.571] LogicalDrive:\\.\I: PhyDrive:2 Offset:1048576 ExtentLength:128009109504
+[2021/11/11 11:32:35.571] I --> 2
+[2021/11/11 11:32:35.571] Create file Handle:00000194 \\.\PhysicalDrive0 status:0
+[2021/11/11 11:32:35.571] PHYSICALDRIVE0 size 3000592982016 bytes
+[2021/11/11 11:32:35.571] Create file Handle:00000194 \\.\PhysicalDrive1 status:0
+[2021/11/11 11:32:35.571] PHYSICALDRIVE1 size 512110190592 bytes
+[2021/11/11 11:32:35.572] Create file Handle:00000194 \\.\PhysicalDrive2 status:0
+[2021/11/11 11:32:35.572] PHYSICALDRIVE2 size 128043712512 bytes
+[2021/11/11 11:32:35.572] PhyDrv:0 BusType:SATA Removable:0 Size:3000GB(3000592982016) Name: WDC WD30EURX-64HYZY0
+[2021/11/11 11:32:35.572] PhyDrv:1 BusType:Nvme Removable:0 Size:512GB(512110190592) Name: SAMSUNG MZVL2512HCJQ-00B00
+[2021/11/11 11:32:35.572] PhyDrv:2 BusType:USB  Removable:1 Size:128GB(128043712512) Name:SanDisk Extreme Pro
+[2021/11/11 11:32:35.572] LogicalDrive:\\.\C: PhyDrive:1 Offset:239075328 ExtentLength:355408544256
+[2021/11/11 11:32:35.572] Logical Drive:C  ===> PhyDrive:1
+[2021/11/11 11:32:35.572] LogicalDrive:\\.\D: PhyDrive:0 Offset:2097152 ExtentLength:2780991324672
+[2021/11/11 11:32:35.572] Logical Drive:D  ===> PhyDrive:0
+[2021/11/11 11:32:35.572] LogicalDrive:\\.\E: PhyDrive:0 Offset:2780995518464 ExtentLength:110595408384
+[2021/11/11 11:32:35.572] Logical Drive:E  ===> PhyDrive:0
+[2021/11/11 11:32:35.572] LogicalDrive:\\.\F: PhyDrive:0 Offset:2891593023488 ExtentLength:108997732864
+[2021/11/11 11:32:35.573] Logical Drive:F  ===> PhyDrive:0
+[2021/11/11 11:32:35.573] LogicalDrive:\\.\G: PhyDrive:1 Offset:355649716224 ExtentLength:109521666560
+[2021/11/11 11:32:35.573] Logical Drive:G  ===> PhyDrive:1
+[2021/11/11 11:32:35.573] LogicalDrive:\\.\H: PhyDrive:1 Offset:465173479424 ExtentLength:46934485504
+[2021/11/11 11:32:35.573] Logical Drive:H  ===> PhyDrive:1
+[2021/11/11 11:32:35.573] LogicalDrive:\\.\I: PhyDrive:2 Offset:1048576 ExtentLength:128009109504
+[2021/11/11 11:32:35.573] Logical Drive:I  ===> PhyDrive:2
+[2021/11/11 11:32:35.573] Create file Handle:00000194 \\.\PhysicalDrive2 status:0
+[2021/11/11 11:32:35.574] Read MBR Ret:1 Size:512 code:183
+[2021/11/11 11:32:35.574] =========== Disk2 Partition Table 1 ============
+[2021/11/11 11:32:35.574] PartTbl.Active = 0x80
+[2021/11/11 11:32:35.574] PartTbl.FsFlag = 0x7
+[2021/11/11 11:32:35.574] PartTbl.StartSectorId = 2048
+[2021/11/11 11:32:35.574] PartTbl.SectorCount = 250017792
+[2021/11/11 11:32:35.574] PartTbl.StartHead = 32
+[2021/11/11 11:32:35.574] PartTbl.StartSector = 33
+[2021/11/11 11:32:35.574] PartTbl.StartCylinder = 0
+[2021/11/11 11:32:35.574] PartTbl.EndHead = 3
+[2021/11/11 11:32:35.574] PartTbl.EndSector = 56
+[2021/11/11 11:32:35.574] PartTbl.EndCylinder = 203
+[2021/11/11 11:32:35.574] =========== Disk2 Partition Table 2 ============
+[2021/11/11 11:32:35.574] PartTbl.Active = 0x0
+[2021/11/11 11:32:35.574] PartTbl.FsFlag = 0xef
+[2021/11/11 11:32:35.574] PartTbl.StartSectorId = 250019840
+[2021/11/11 11:32:35.574] PartTbl.SectorCount = 65536
+[2021/11/11 11:32:35.574] PartTbl.StartHead = 3
+[2021/11/11 11:32:35.574] PartTbl.StartSector = 57
+[2021/11/11 11:32:35.574] PartTbl.StartCylinder = 203
+[2021/11/11 11:32:35.574] PartTbl.EndHead = 24
+[2021/11/11 11:32:35.574] PartTbl.EndSector = 9
+[2021/11/11 11:32:35.574] PartTbl.EndCylinder = 207
+[2021/11/11 11:32:35.574] =========== Disk2 Partition Table 3 ============
+[2021/11/11 11:32:35.574] PartTbl.Active = 0x0
+[2021/11/11 11:32:35.575] PartTbl.FsFlag = 0x0
+[2021/11/11 11:32:35.575] PartTbl.StartSectorId = 0
+[2021/11/11 11:32:35.575] PartTbl.SectorCount = 0
+[2021/11/11 11:32:35.575] PartTbl.StartHead = 0
+[2021/11/11 11:32:35.575] PartTbl.StartSector = 0
+[2021/11/11 11:32:35.575] PartTbl.StartCylinder = 0
+[2021/11/11 11:32:35.575] PartTbl.EndHead = 0
+[2021/11/11 11:32:35.575] PartTbl.EndSector = 0
+[2021/11/11 11:32:35.575] PartTbl.EndCylinder = 0
+[2021/11/11 11:32:35.575] =========== Disk2 Partition Table 4 ============
+[2021/11/11 11:32:35.575] PartTbl.Active = 0x0
+[2021/11/11 11:32:35.575] PartTbl.FsFlag = 0x0
+[2021/11/11 11:32:35.575] PartTbl.StartSectorId = 0
+[2021/11/11 11:32:35.575] PartTbl.SectorCount = 0
+[2021/11/11 11:32:35.575] PartTbl.StartHead = 0
+[2021/11/11 11:32:35.575] PartTbl.StartSector = 0
+[2021/11/11 11:32:35.575] PartTbl.StartCylinder = 0
+[2021/11/11 11:32:35.575] PartTbl.EndHead = 0
+[2021/11/11 11:32:35.575] PartTbl.EndSector = 0
+[2021/11/11 11:32:35.575] PartTbl.EndCylinder = 0
+[2021/11/11 11:32:35.575] PhysicalDrive2 is ventoy disk
+[2021/11/11 11:32:35.575] QueryDosDeviceA success \Device\Harddisk2\DR2
+[2021/11/11 11:32:35.576] [0] CreateFileA \\.\PhysicalDrive2 code:0 00000194
+[2021/11/11 11:32:35.576] Parse FAT fs...
+[2021/11/11 11:32:35.576] attach media success...
+[2021/11/11 11:32:35.593] GetVentoyVerInPhyDrive rc=0...
+[2021/11/11 11:32:35.593] VentoyVerInPhyDrive 2 is <1.0.59>...
+[2021/11/11 11:32:35.595] PhyDrive 2 is Ventoy Disk ver:1.0.59 SecureBoot:0
+[2021/11/11 11:32:35.595] < WDC WD30EURX-64HYZY0> is filtered for not USB type.
+[2021/11/11 11:32:35.595] < SAMSUNG MZVL2512HCJQ-00B00> is filtered for not USB type.
+[2021/11/11 11:32:35.606] Load languages from json file ...
+[2021/11/11 11:32:35.606] language json file len:179685 json parse:0
+[2021/11/11 11:32:35.607] Total 41 languages ...
+[2021/11/11 11:32:35.620] Combox select change, update secure boot option: 0 0

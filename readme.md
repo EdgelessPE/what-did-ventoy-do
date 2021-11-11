@@ -86,6 +86,3 @@ try{
 }
 
 ```
-
-## Shortage
-Ventoy2Disk won't tell the version of Ventoy attached to it in `log.txt`,so we can't get the version of newly installed or updated Ventoy in the target drive,the `ventoyStatus.version` value will be set `Unknown`.To get exact version of Ventoy,please restart the Ventoy2Disk process and analyze the log again.

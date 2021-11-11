@@ -15,6 +15,7 @@ interface _VentoyInfo{
 }
 interface _Ventoy2DiskInfo{
     version:string
+    ventoy_version:string
 }
 interface _VentoyOperationStatus {
     success:boolean
@@ -48,15 +49,23 @@ interface NaiveDriveInfo{
 }
 
 let log:string=""
+let ventoy_version=""
 let operation_log:Array<_VentoyOperationStatus>=[]
 
 
 //match util
 const regexTable:any={
     Ventoy2Disk_Version:{
-        exp:/Ventoy2Disk \d(.+)/,
+        exp:/Ventoy2DiskX86 [^#]+/,
         handler:(r:RegExpMatchArray):string=>{
-            return r[0].match(/\d+.\d+(.\d+)*/)[0]
+            return r[0].match(/\d(\.\d+){3}/)[0]
+        }
+    },
+    Ventoy_Version:{
+        exp:/Ventoy2DiskX86 [^#]+/,
+        handler:(r:RegExpMatchArray):string=>{
+            let m=r[0].match(/\(\d(\.\d+){2}\)/)[0]
+            return m.slice(1,-1)
         }
     },
     Win_line:{
@@ -151,7 +160,7 @@ function findVentoyInstalledOrUpdated(install:boolean):any{
             installed:success||!install,
             updated:!install&&success,
             secureBoot,
-            version:"Unknown",
+            version:ventoy_version,
             success
         }
 
@@ -351,6 +360,9 @@ export default function (input_log:string):VentoyStatus{
         throw "INPUT_INVALID_LOG"
     }
 
+    //获得内置的Ventoy版本号
+    ventoy_version=match("Ventoy_Version") as string
+    
     //匹配Windows信息
     let w_line=match("Win_line") as string
     let winInfo=parseWinInfo(w_line)
@@ -366,7 +378,8 @@ export default function (input_log:string):VentoyStatus{
     }
 
     let ventoy2DiskInfo:_Ventoy2DiskInfo={
-        version:v2dVer
+        version:v2dVer,
+        ventoy_version
     }
 
     return {
