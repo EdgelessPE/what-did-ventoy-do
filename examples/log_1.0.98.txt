@@ -1,0 +1,109 @@
+[2024/05/29 20:43:38.868] 
+##################################################################################
+############################## Ventoy2DiskX86  #############################
+##################################################################################
+[2024/05/29 20:43:38.868] Current Directory <D:\Download\HubCache\Burn\ventoy-1.0.98>
+[2024/05/29 20:43:38.868] Exe file path <D:\Download\HubCache\Burn\ventoy-1.0.98\Ventoy2Disk.exe>
+[2024/05/29 20:43:38.868] Current directory check OK.
+[2024/05/29 20:43:38.869] Current directory:<D:\Download\HubCache\Burn\ventoy-1.0.98>
+[2024/05/29 20:43:38.869] ######### Current Ventoy Version: Ventoy2DiskX86 1.0.98 ########
+[2024/05/29 20:43:38.875] id=16780/17632
+[2024/05/29 20:43:38.876] PPath:<C:\Windows\System32\cmd.exe>
+[2024/05/29 20:43:38.876] PSize:<245760 240KB>
+[2024/05/29 20:43:38.876] Lunch main process 0
+[2024/05/29 20:43:38.877] Control Flag: 0 1 1
+[2024/05/29 20:43:38.877] Set Ventoy FS ClusterSize 0
+[2024/05/29 20:43:38.878] Windows Version: <<Windows 11 Pro for Workstations, 64-bit (Build 22631.3593)>>
+[2024/05/29 20:43:38.878] 
+===================== Enum All PhyDrives =====================
+[2024/05/29 20:43:38.879] RegOpenKeyExA <SYSTEM\CurrentControlSet\Services\disk\Enum> Ret:0
+[2024/05/29 20:43:38.879] RegQueryValueExA <Count> ret:0  Size:4 Value:2
+[2024/05/29 20:43:38.879] GetPhysicalDriveCount: 2
+[2024/05/29 20:43:38.879] Logical Drives: 0x1c
+[2024/05/29 20:43:38.880] LogicalDrive:\\.\C: PhyDrive:0 Num:1 Offset:122683392 ExtentLength:1510483165184
+[2024/05/29 20:43:38.880] C --> 0
+[2024/05/29 20:43:38.880] LogicalDrive:\\.\D: PhyDrive:0 Num:1 Offset:1510605848576 ExtentLength:536978903552
+[2024/05/29 20:43:38.880] D --> 0
+[2024/05/29 20:43:38.880] LogicalDrive:\\.\E: PhyDrive:1 Num:1 Offset:1048576 ExtentLength:7975469056
+[2024/05/29 20:43:38.880] E --> 1
+[2024/05/29 20:43:38.881] Create file Handle:00000144 \\.\PhysicalDrive0 status:0
+[2024/05/29 20:43:38.881] PHYSICALDRIVE0 size 2048408248320 bytes
+[2024/05/29 20:43:38.883] Create file Handle:00000144 \\.\PhysicalDrive1 status:0
+[2024/05/29 20:43:38.883] PHYSICALDRIVE1 size 8010072064 bytes
+[2024/05/29 20:43:38.883] DeviceIoControl3 error:1 dwBytes:112
+[2024/05/29 20:43:38.883] PhyDrv:0 BusType:Nvme Removable:0 Size:2048GB(2048408248320) Sector:512/4096 Name: SAMSUNG MZVL22T0HBLB-00BTW
+[2024/05/29 20:43:38.884] PhyDrv:1 BusType:USB  Removable:1 Size:8GB(8010072064) Sector:0/0 Name:Kingston DT 101 G2
+[2024/05/29 20:43:38.884] LogicalDrive:\\.\C: PhyDrive:0 Num:1 Offset:122683392 ExtentLength:1510483165184
+[2024/05/29 20:43:38.884] Logical Drive:C  ===> PhyDrive:0
+[2024/05/29 20:43:38.884] LogicalDrive:\\.\D: PhyDrive:0 Num:1 Offset:1510605848576 ExtentLength:536978903552
+[2024/05/29 20:43:38.884] Logical Drive:D  ===> PhyDrive:0
+[2024/05/29 20:43:38.885] LogicalDrive:\\.\E: PhyDrive:1 Num:1 Offset:1048576 ExtentLength:7975469056
+[2024/05/29 20:43:38.885] Logical Drive:E  ===> PhyDrive:1
+[2024/05/29 20:43:38.886] Create file Handle:00000108 \\.\PhysicalDrive1 status:0
+[2024/05/29 20:43:38.888] Read MBR Ret:1 Size:512 code:183
+[2024/05/29 20:43:38.888] =========== Disk1 MBR Partition 1 ============
+[2024/05/29 20:43:38.888] PartTbl.Active = 0x80
+[2024/05/29 20:43:38.888] PartTbl.FsFlag = 0x7
+[2024/05/29 20:43:38.889] PartTbl.StartSectorId = 2048
+[2024/05/29 20:43:38.889] PartTbl.SectorCount = 15577088
+[2024/05/29 20:43:38.889] PartTbl.StartHead = 32
+[2024/05/29 20:43:38.889] PartTbl.StartSector = 33
+[2024/05/29 20:43:38.889] PartTbl.StartCylinder = 0
+[2024/05/29 20:43:38.889] PartTbl.EndHead = 192
+[2024/05/29 20:43:38.890] PartTbl.EndSector = 55
+[2024/05/29 20:43:38.890] PartTbl.EndCylinder = 969
+[2024/05/29 20:43:38.890] =========== Disk1 MBR Partition 2 ============
+[2024/05/29 20:43:38.890] PartTbl.Active = 0x0
+[2024/05/29 20:43:38.890] PartTbl.FsFlag = 0xef
+[2024/05/29 20:43:38.890] PartTbl.StartSectorId = 15579136
+[2024/05/29 20:43:38.890] PartTbl.SectorCount = 65536
+[2024/05/29 20:43:38.891] PartTbl.StartHead = 192
+[2024/05/29 20:43:38.891] PartTbl.StartSector = 56
+[2024/05/29 20:43:38.891] PartTbl.StartCylinder = 969
+[2024/05/29 20:43:38.891] PartTbl.EndHead = 213
+[2024/05/29 20:43:38.891] PartTbl.EndSector = 8
+[2024/05/29 20:43:38.892] PartTbl.EndCylinder = 973
+[2024/05/29 20:43:38.892] =========== Disk1 MBR Partition 3 ============
+[2024/05/29 20:43:38.892] PartTbl.Active = 0x0
+[2024/05/29 20:43:38.892] PartTbl.FsFlag = 0x0
+[2024/05/29 20:43:38.892] PartTbl.StartSectorId = 0
+[2024/05/29 20:43:38.892] PartTbl.SectorCount = 0
+[2024/05/29 20:43:38.893] PartTbl.StartHead = 0
+[2024/05/29 20:43:38.893] PartTbl.StartSector = 0
+[2024/05/29 20:43:38.893] PartTbl.StartCylinder = 0
+[2024/05/29 20:43:38.893] PartTbl.EndHead = 0
+[2024/05/29 20:43:38.893] PartTbl.EndSector = 0
+[2024/05/29 20:43:38.893] PartTbl.EndCylinder = 0
+[2024/05/29 20:43:38.893] =========== Disk1 MBR Partition 4 ============
+[2024/05/29 20:43:38.894] PartTbl.Active = 0x0
+[2024/05/29 20:43:38.894] PartTbl.FsFlag = 0x0
+[2024/05/29 20:43:38.894] PartTbl.StartSectorId = 0
+[2024/05/29 20:43:38.894] PartTbl.SectorCount = 0
+[2024/05/29 20:43:38.894] PartTbl.StartHead = 0
+[2024/05/29 20:43:38.894] PartTbl.StartSector = 0
+[2024/05/29 20:43:38.894] PartTbl.StartCylinder = 0
+[2024/05/29 20:43:38.894] PartTbl.EndHead = 0
+[2024/05/29 20:43:38.895] PartTbl.EndSector = 0
+[2024/05/29 20:43:38.895] PartTbl.EndCylinder = 0
+[2024/05/29 20:43:38.895] PhysicalDrive1 is ventoy disk
+[2024/05/29 20:43:38.895] QueryDosDeviceA success \Device\Harddisk1\DR1
+[2024/05/29 20:43:38.896] [0] CreateFileA \\.\PhysicalDrive1 code:0 00000140
+[2024/05/29 20:43:38.896] Parse FAT fs...
+[2024/05/29 20:43:38.898] attach media success...
+[2024/05/29 20:43:38.998] GetVentoyVerInPhyDrive rc=0...
+[2024/05/29 20:43:38.998] VentoyVerInPhyDrive 1 is <1.0.98>...
+[2024/05/29 20:43:39.001] PhyDrive 1 is Ventoy Disk ver:1.0.98 SecureBoot:1
+[2024/05/29 20:43:39.001] LogicalDrive:\\.\E: PhyDrive:1 Num:1 Offset:1048576 ExtentLength:7975469056
+[2024/05/29 20:43:39.001] Find the partition 1 logical drive is E:\
+[2024/05/29 20:43:39.002] GetVolumeClusterSize E:\ SUCCESS 64 512 32768
+[2024/05/29 20:43:39.002] GetVentoyFsNameInPhyDrive 1 E:\ <exFAT> <exFAT>
+[2024/05/29 20:43:39.002] < SAMSUNG MZVL22T0HBLB-00BTW> is filtered for not USB type.
+[2024/05/29 20:43:39.030] Load languages from json file ...
+[2024/05/29 20:43:39.031] language json file len:276741 json parse:0
+[2024/05/29 20:43:39.032] Total 51 languages ...
+[2024/05/29 20:43:39.180] Combox select change, update secure boot option: 1 1
+[2024/05/29 20:43:39.190] Courier New font <C:\Windows\Fonts\couri.ttf> exist OK.
+[2024/05/29 20:43:39.190] system_dir=<C:\Windows\system32>
+[2024/05/29 20:43:39.190] sysnative_dir=<C:\Windows\Sysnative>
+[2024/05/29 20:43:39.190] LoadLibrary shell32.dll.mui SUCCESS
+[2024/05/29 20:43:39.191] SetAlertPromptHook SUCCESS
